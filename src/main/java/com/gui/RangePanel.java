@@ -8,10 +8,13 @@ import com.mathparser.program.Program;
 import com.mathparser.program.VariableTable;
 import com.plotter.Range;
 import com.plotter.RangeListener;
-import java.awt.*;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  * The src.main.java.com.gui.RangePanel is a part of the "GUI".
@@ -87,7 +90,7 @@ public final class RangePanel extends JPanel {
             return program.dExecute(variableTable);
         } catch (ArithSyntaxException exception) {
             JOptionPane.showMessageDialog(null,
-                    "src.main.java.com.plotter.Range Panel \n" + "error encountered: \n" + exception.getMessage());
+                    "Range Panel \n" + "error encountered: \n" + exception.getMessage());
         }
         return 0; // error
     }

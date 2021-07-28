@@ -10,7 +10,6 @@ import com.mathparser.ast.intnodes.IntSubtraction;
 import com.mathparser.ast.intnodes.IntVariable;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import sun.tools.jstat.Literal;
 
 /**
  * This test class will test some aspects of the rules

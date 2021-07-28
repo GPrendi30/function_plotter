@@ -2,7 +2,7 @@ package com.mathparser.ast.doublenodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.doubleInstruction.DDIV;
+import com.mathparser.instruction.doubleinstruction.DDIV;
 
 
 public class DoubleDivision extends DoubleBinaryNode {

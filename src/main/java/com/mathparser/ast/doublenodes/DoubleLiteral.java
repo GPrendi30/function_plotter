@@ -3,7 +3,7 @@ package com.mathparser.ast.doublenodes;
 import com.mathparser.ast.NodeLiteral;
 import com.mathparser.ast.Type;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.doubleInstruction.BDPUSH;
+import com.mathparser.instruction.doubleinstruction.BDPUSH;
 
 /**
  * A Literal is an AST node that
@@ -15,7 +15,7 @@ public class DoubleLiteral extends NodeLiteral {
     /**
      * Creates a new literal with a given doubleValue.
      *
-     * @param doubleValue a double vaulue for src.main.java.com.mathparser.ast.doublenodes.DoubleLiteral
+     * @param doubleValue a double vaulue for DoubleLiteral
      */
     public DoubleLiteral(final double doubleValue) {
         super(doubleValue);

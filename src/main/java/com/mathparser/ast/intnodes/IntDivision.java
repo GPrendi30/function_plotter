@@ -2,7 +2,7 @@ package com.mathparser.ast.intnodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.IDIV;
+import com.mathparser.instruction.intinstruction.IDIV;
 
 public class IntDivision extends IntBinaryNode {
     /**

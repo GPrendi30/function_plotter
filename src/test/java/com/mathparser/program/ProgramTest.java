@@ -1,7 +1,7 @@
 package com.mathparser.program;
 
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.BIPUSH;
+import com.mathparser.instruction.intinstruction.BIPUSH;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import org.junit.Test;

@@ -1,20 +1,20 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.doubleinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;
 import com.mathparser.program.Storage;
 
-public class IDIV implements Instruction {
+public class DSUB implements Instruction {
 
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
-        stack.ipush((1 / stack.ipop()) * stack.ipop());
+        stack.dpush(-stack.dpop() + stack.dpop());
     }
 
     @Override
     public String toString() {
-        return "IDIV";
+        return "DSUB";
     }
 
 }

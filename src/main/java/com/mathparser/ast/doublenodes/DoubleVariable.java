@@ -3,7 +3,7 @@ package com.mathparser.ast.doublenodes;
 import com.mathparser.ast.NodeVariable;
 import com.mathparser.ast.Type;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.doubleInstruction.DLOAD;
+import com.mathparser.instruction.doubleinstruction.DLOAD;
 
 
 public class DoubleVariable extends NodeVariable {

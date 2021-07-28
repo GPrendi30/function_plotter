@@ -19,7 +19,7 @@ public class ArithSyntaxException extends Exception {
     }
 
     /**
-     * Creates a src.main.java.com.mathparser.parser.ArithSyntaxException with a message and a cause.
+     * Creates a ArithSyntaxException with a message and a cause.
      *
      * @param message a String message thrown with the exception.
      * @param cause   the cause of the Exception.

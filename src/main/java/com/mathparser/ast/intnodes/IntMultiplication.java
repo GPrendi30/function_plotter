@@ -2,7 +2,7 @@ package com.mathparser.ast.intnodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.IMUL;
+import com.mathparser.instruction.intinstruction.IMUL;
 
 public class IntMultiplication extends IntBinaryNode {
 

@@ -3,7 +3,7 @@ package com.mathparser.ast.doublenodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.doubleInstruction.DNEG;
+import com.mathparser.instruction.doubleinstruction.DNEG;
 
 /**
  * A src.main.java.com.mathparser.ast.doublenodes.DoubleNegation class (e.g., -5, or -x).

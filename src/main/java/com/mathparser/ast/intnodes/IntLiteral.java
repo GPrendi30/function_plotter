@@ -3,7 +3,7 @@ package com.mathparser.ast.intnodes;
 import com.mathparser.ast.NodeLiteral;
 import com.mathparser.ast.Type;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.BIPUSH;
+import com.mathparser.instruction.intinstruction.BIPUSH;
 
 /**
  * A Literal is an AST node that

@@ -1,24 +1,19 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.doubleinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;
 import com.mathparser.program.Storage;
 
-/**
- * INEG negates the top value from the OperandStack
- * and ipushes the result back to the OperandStack.
- */
-public class INEG implements Instruction {
+public class DADD implements Instruction {
 
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
-        stack.ipush(-stack.ipop());
+        stack.dpush(stack.dpop() + stack.dpop());
     }
 
     @Override
     public String toString() {
-        return "INEG";
+        return "DADD";
     }
-
 }

@@ -6,6 +6,7 @@ import com.mathparser.parser.ArithSyntaxException;
 import com.mathparser.parser.Parser;
 import com.mathparser.program.Program;
 import com.mathparser.program.VariableTable;
+
 import java.util.ArrayList;
 
 /**

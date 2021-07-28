@@ -3,7 +3,7 @@ package com.mathparser.ast.intnodes;
 import com.mathparser.ast.NodeVariable;
 import com.mathparser.ast.Type;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.ILOAD;
+import com.mathparser.instruction.intinstruction.ILOAD;
 
 
 public class IntVariable extends NodeVariable {

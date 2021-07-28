@@ -1,8 +1,5 @@
 package com.mathparser.program;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 import com.mathparser.ast.Node;
 import com.mathparser.ast.doublenodes.DoubleAddition;
 import com.mathparser.ast.doublenodes.DoubleDivision;
@@ -20,22 +17,25 @@ import com.mathparser.ast.intnodes.IntNegation;
 import com.mathparser.ast.intnodes.IntSubtraction;
 import com.mathparser.ast.intnodes.IntToDouble;
 import com.mathparser.ast.intnodes.IntVariable;
-import com.mathparser.instruction.doubleInstruction.BDPUSH;
-import com.mathparser.instruction.doubleInstruction.D2I;
-import com.mathparser.instruction.doubleInstruction.DADD;
-import com.mathparser.instruction.doubleInstruction.DDIV;
-import com.mathparser.instruction.doubleInstruction.DLOAD;
-import com.mathparser.instruction.doubleInstruction.DMUL;
-import com.mathparser.instruction.doubleInstruction.DNEG;
-import com.mathparser.instruction.doubleInstruction.DSUB;
-import com.mathparser.instruction.intInstruction.BIPUSH;
-import com.mathparser.instruction.intInstruction.I2D;
-import com.mathparser.instruction.intInstruction.IADD;
-import com.mathparser.instruction.intInstruction.IDIV;
-import com.mathparser.instruction.intInstruction.ILOAD;
-import com.mathparser.instruction.intInstruction.IMUL;
-import com.mathparser.instruction.intInstruction.INEG;
-import com.mathparser.instruction.intInstruction.ISUB;
+import com.mathparser.instruction.doubleinstruction.BDPUSH;
+import com.mathparser.instruction.doubleinstruction.D2I;
+import com.mathparser.instruction.doubleinstruction.DADD;
+import com.mathparser.instruction.doubleinstruction.DDIV;
+import com.mathparser.instruction.doubleinstruction.DLOAD;
+import com.mathparser.instruction.doubleinstruction.DMUL;
+import com.mathparser.instruction.doubleinstruction.DNEG;
+import com.mathparser.instruction.doubleinstruction.DSUB;
+import com.mathparser.instruction.intinstruction.BIPUSH;
+import com.mathparser.instruction.intinstruction.I2D;
+import com.mathparser.instruction.intinstruction.IADD;
+import com.mathparser.instruction.intinstruction.IDIV;
+import com.mathparser.instruction.intinstruction.ILOAD;
+import com.mathparser.instruction.intinstruction.IMUL;
+import com.mathparser.instruction.intinstruction.INEG;
+import com.mathparser.instruction.intinstruction.ISUB;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 
 /**

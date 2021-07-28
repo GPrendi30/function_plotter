@@ -1,20 +1,19 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.doubleinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;
 import com.mathparser.program.Storage;
 
-public class I2D implements Instruction {
+public class DNEG implements Instruction {
 
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
-        final int val = stack.ipop();
-        stack.dpush(val);
+        stack.dpush(-stack.dpop());
     }
 
     @Override
     public String toString() {
-        return "I2D";
+        return "DNEG";
     }
 }

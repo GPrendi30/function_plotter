@@ -1,19 +1,21 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.doubleinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;
 import com.mathparser.program.Storage;
 
-public class IMUL implements Instruction {
+public class D2I implements Instruction {
 
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
-        stack.ipush(stack.ipop() * stack.ipop());
+        final double val = stack.ipop();
+        stack.ipush((int) val);
     }
 
     @Override
     public String toString() {
-        return "IMUL";
+        return "D2I";
     }
+
 }

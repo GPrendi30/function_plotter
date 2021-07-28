@@ -1,4 +1,4 @@
-package com.mathparser.instruction.doubleInstruction;
+package com.mathparser.instruction.intinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.Storage;
@@ -6,28 +6,28 @@ import com.mathparser.program.Storage;
 /**
  * BIPUSH pushes the given value onto the operand stack.
  */
-public class BDPUSH implements Instruction {
+public class BIPUSH implements Instruction {
 
-    private final double value;
+    private final int value;
 
     /**
      * Creates a new BIPUSH node.
      *
      * @param value a int
      */
-    public BDPUSH(final double value) {
+    public BIPUSH(final int value) {
         super();
         this.value = value;
     }
 
     @Override
     public void execute(final Storage storage) {
-        storage.getOperandStack().dpush(value);
+        storage.getOperandStack().ipush(value);
     }
 
     @Override
     public String toString() {
-        return "BDPUSH " + value;
+        return "BIPUSH " + value;
     }
 
 }

@@ -1,10 +1,11 @@
 package com.main;
 
-import java.awt.EventQueue;
 import com.gui.PlotterFrame;
 import com.plotter.Cursor;
 import com.plotter.Plot;
 import com.plotter.Range;
+
+import java.awt.EventQueue;
 
 
 /**

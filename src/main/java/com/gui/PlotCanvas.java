@@ -1,10 +1,15 @@
 package com.gui;
 
-import com.plotter.CursorListener;
-import com.plotter.Plot;
 import com.plotter.Cursor;
+import com.plotter.CursorListener;
 import com.plotter.Function;
-import java.awt.*;
+import com.plotter.Plot;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -21,11 +26,14 @@ public final class PlotCanvas extends Canvas {
 
     private static final Dimension PREFERRED_SIZE = new Dimension(400, 300);
     private final Cursor cursor;
-    private final Color[] colors = {Color.BLUE, Color.GREEN, Color.RED,
-            Color.CYAN,
-            Color.PINK,
-            Color.MAGENTA,
-            Color.ORANGE,};
+    private final Color[] colors = {
+        Color.BLUE,
+        Color.GREEN,
+        Color.RED,
+        Color.CYAN,
+        Color.PINK,
+        Color.MAGENTA,
+        Color.ORANGE,};
 
 
     /**

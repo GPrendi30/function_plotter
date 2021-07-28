@@ -2,10 +2,19 @@ package com.gui;
 
 import com.plotter.Function;
 import com.plotter.FunctionException;
-import java.awt.*;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class FunctionPanel extends JComponent {
 
@@ -42,7 +51,9 @@ public class FunctionPanel extends JComponent {
     }
 
     private void addEnableButton() {
-        final CustomButton enabledButton = new CustomButton(ENABLE_ICON, "Enables drawing a function");
+        final CustomButton enabledButton = new CustomButton(
+                ENABLE_ICON,
+                "Enables drawing a function");
         enabledButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent actionEvent) {

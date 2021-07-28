@@ -1,7 +1,10 @@
 package com.gui;
 
 import com.plotter.Plot;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
 
 /**
@@ -17,9 +20,9 @@ public final class ShadeCanvas extends Canvas {
 
 
     /**
-     * Create a new src.main.java.com.gui.ShadeCanvas presenting the given src.main.java.com.plotter.Plot.
+     * Create a new ShadeCanvas presenting the given Plot.
      *
-     * @param plot The src.main.java.com.plotter.Plot to render
+     * @param plot The Plot to render
      */
     public ShadeCanvas(final Plot plot) {
         super(plot);

@@ -2,7 +2,7 @@ package com.mathparser.ast.intnodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.INEG;
+import com.mathparser.instruction.intinstruction.INEG;
 
 /**
  * An integer src.main.java.com.mathparser.ast.intnodes.IntNegation (e.g., -5, or -x).

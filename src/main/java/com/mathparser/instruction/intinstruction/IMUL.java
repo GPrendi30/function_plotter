@@ -1,25 +1,19 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.intinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;
 import com.mathparser.program.Storage;
 
-/**
- * IADD adds the top two values from the OperandStack
- * and ipushes the result back to the OperandStack.
- */
-public class IADD implements Instruction {
+public class IMUL implements Instruction {
 
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
-        stack.ipush(stack.ipop() + stack.ipop());
+        stack.ipush(stack.ipop() * stack.ipop());
     }
-
 
     @Override
     public String toString() {
-        return "IADD";
+        return "IMUL";
     }
-
 }

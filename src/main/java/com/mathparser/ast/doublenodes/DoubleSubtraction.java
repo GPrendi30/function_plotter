@@ -2,7 +2,7 @@ package com.mathparser.ast.doublenodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.doubleInstruction.DSUB;
+import com.mathparser.instruction.doubleinstruction.DSUB;
 
 /**
  * An integer src.main.java.com.mathparser.ast.intnodes.IntSubtraction.

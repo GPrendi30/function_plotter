@@ -3,7 +3,7 @@ package com.mathparser.ast.intnodes;
 import com.mathparser.ast.Node;
 import com.mathparser.ast.doublenodes.DoubleUnaryNode;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.I2D;
+import com.mathparser.instruction.intinstruction.I2D;
 
 public class IntToDouble extends DoubleUnaryNode {
 

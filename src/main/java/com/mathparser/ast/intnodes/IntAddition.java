@@ -3,7 +3,7 @@ package com.mathparser.ast.intnodes;
 
 import com.mathparser.ast.Node;
 import com.mathparser.instruction.Instruction;
-import com.mathparser.instruction.intInstruction.IADD;
+import com.mathparser.instruction.intinstruction.IADD;
 
 /**
  * An integer src.main.java.com.mathparser.ast.intnodes.IntAddition.

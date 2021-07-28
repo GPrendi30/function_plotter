@@ -4,17 +4,23 @@ import com.plotter.Function;
 import com.plotter.FunctionException;
 import com.plotter.Plot;
 import com.plotter.PlotListener;
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class SidePanel extends JPanel {
 
     private final ArrayList<FunctionPanel> functions;
     private final ArrayList<SidePanelListener> listeners;
-    private final CustomButton addButton = new CustomButton(new ImageIcon("src/main/resources/add32.png"),
+    private final CustomButton addButton = new CustomButton(
+            new ImageIcon("src/main/resources/add32.png"),
             "Adds a new src.main.java.com.plotter.Function");
     private final Plot model;
 

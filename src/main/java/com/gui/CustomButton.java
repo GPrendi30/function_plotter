@@ -1,7 +1,10 @@
 package com.gui;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Insets;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class CustomButton extends JButton {
 

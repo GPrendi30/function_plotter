@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * The src.main.java.com.plotter.Plot is the "model" of this application.
  * It is an immutable class that
  * points to the two mutable and observable parts of the "model":
- * 1) a src.main.java.com.plotter.Function, and
- * 2) a src.main.java.com.plotter.Range (along the x-axis, over which the function should be plotted).
+ * 1) a Function, and
+ * 2) a Range (along the x-axis, over which the function should be plotted).
  */
 public final class Plot {
 

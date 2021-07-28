@@ -1,4 +1,4 @@
-package com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.intinstruction;
 
 import com.mathparser.instruction.Instruction;
 import com.mathparser.program.OperandStack;

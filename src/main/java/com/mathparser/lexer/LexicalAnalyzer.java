@@ -1,6 +1,7 @@
 package com.mathparser.lexer;
 
 import com.mathparser.parser.ArithSyntaxException;
+
 import java.util.Arrays;
 
 /**
@@ -37,27 +38,27 @@ public final class LexicalAnalyzer {
      */
     public LexicalAnalyzer(final String expression) {
         this(expression, new TokenFactory[]{
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.SIN"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.COS"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.SUM"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.ABS"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.AVG"),
-                new FunctionTokenFactory("MAX"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.MIN"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.MOD"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.POW"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.LOG"),
-                new FunctionTokenFactory("src.main.java.com.mathparser.functions.EXP"),
-                new IdentifierTokenFactory(),
-                new LiteralTokenFactory(),
-                new OperatorTokenFactory("+", TokenType.PLUS),
-                new OperatorTokenFactory("-", TokenType.MINUS),
-                new OperatorTokenFactory("*", TokenType.STAR),
-                new OperatorTokenFactory("/", TokenType.SLASH),
-                new OperatorTokenFactory("%", TokenType.PERCENT),
-                new OperatorTokenFactory("(", TokenType.OPEN_PAREN),
-                new OperatorTokenFactory(")", TokenType.CLOSED_PAREN),
-                new OperatorTokenFactory(",", TokenType.COMMA),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.SIN"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.COS"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.SUM"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.ABS"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.AVG"),
+            new FunctionTokenFactory("MAX"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.MIN"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.MOD"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.POW"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.LOG"),
+            new FunctionTokenFactory("src.main.java.com.mathparser.functions.EXP"),
+            new IdentifierTokenFactory(),
+            new LiteralTokenFactory(),
+            new OperatorTokenFactory("+", TokenType.PLUS),
+            new OperatorTokenFactory("-", TokenType.MINUS),
+            new OperatorTokenFactory("*", TokenType.STAR),
+            new OperatorTokenFactory("/", TokenType.SLASH),
+            new OperatorTokenFactory("%", TokenType.PERCENT),
+            new OperatorTokenFactory("(", TokenType.OPEN_PAREN),
+            new OperatorTokenFactory(")", TokenType.CLOSED_PAREN),
+            new OperatorTokenFactory(",", TokenType.COMMA),
         });
     }
 
