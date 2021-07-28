@@ -1,11 +1,14 @@
-package src.main.java.com.mathparser.functions;
+package com.mathparser.functions;
+
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 public class AVG extends FunctionNode {
     /**
      * Creates a new src.main.java.com.mathparser.functions.AVG function. Average.
      */
     public AVG() {
-        super("src.main.java.com.mathparser.functions.AVG", 2);
+        super("AVG", 2);
     }
 
     protected FunctionInstruction functionInstruction() {

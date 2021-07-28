@@ -1,12 +1,15 @@
-package src.main.java.com.mathparser.lexer.program;
+package com.mathparser.program;
+
+import com.mathparser.ast.Node;
 
 /**
- * A src.main.java.com.mathparser.lexer.program.Compiler converts an AST into a compiled src.main.java.com.mathparser.lexer.program.Program.
+ * A src.main.java.com.mathparser.program.Compiler converts an AST into a compiled src.main.java.com.mathparser.program.Program.
  */
 public class Compiler {
-    
+
     /**
      * Compile the given AST.
+     *
      * @param node The root of an AST
      * @return the compiled program
      */
@@ -15,5 +18,5 @@ public class Compiler {
         node.compile(p);
         return p;
     }
-    
+
 }

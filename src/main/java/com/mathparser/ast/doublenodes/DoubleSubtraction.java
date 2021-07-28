@@ -1,16 +1,18 @@
-package src.main.java.com.mathparser.ast.doublenodes;
+package com.mathparser.ast.doublenodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DSUB;
+import com.mathparser.ast.Node;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.doubleInstruction.DSUB;
 
 /**
  * An integer src.main.java.com.mathparser.ast.intnodes.IntSubtraction.
  */
 public class DoubleSubtraction extends DoubleBinaryNode {
-    
+
     /**
      * Create a new src.main.java.com.mathparser.ast.intnodes.IntSubtraction node.
-     * @param leftChild the left operand
+     *
+     * @param leftChild  the left operand
      * @param rightChild the right operand
      */
     public DoubleSubtraction(final Node leftChild, final Node rightChild) {
@@ -26,5 +28,5 @@ public class DoubleSubtraction extends DoubleBinaryNode {
     public String toString() {
         return super.toString("-");
     }
-    
+
 }

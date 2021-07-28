@@ -1,16 +1,19 @@
-package src.main.java.com.mathparser.ast.intnodes;
+package com.mathparser.ast.intnodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.intInstruction.IADD;
+
+import com.mathparser.ast.Node;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.intInstruction.IADD;
 
 /**
  * An integer src.main.java.com.mathparser.ast.intnodes.IntAddition.
  */
 public class IntAddition extends IntBinaryNode {
-    
+
     /**
      * Create a new src.main.java.com.mathparser.ast.intnodes.IntAddition node.
-     * @param leftChild the left operand
+     *
+     * @param leftChild  the left operand
      * @param rightChild the right operand
      */
     public IntAddition(final Node leftChild, final Node rightChild) {
@@ -26,5 +29,5 @@ public class IntAddition extends IntBinaryNode {
     public String toString() {
         return super.toString("+");
     }
-    
+
 }

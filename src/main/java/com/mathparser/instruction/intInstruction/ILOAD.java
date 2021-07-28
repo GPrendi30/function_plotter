@@ -1,11 +1,17 @@
-package src.main.java.com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.intInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
+import com.mathparser.program.VariableTable;
 
 public class ILOAD implements Instruction {
 
     private final String var;
 
     /**
-     * Creates a new src.main.java.com.mathparser.instruction.intInstruction.ILOAD src.main.java.com.mathparser.instruction.Instruction.
+     * Creates a new ILOAD Instruction.
+     *
      * @param var a String
      */
     public ILOAD(final String var) {
@@ -20,12 +26,13 @@ public class ILOAD implements Instruction {
         final int xValue = variableTable.getInt(var);
         stack.ipush(xValue);
     }
-    
+
     /**
      * Returns a String representing the node.
+     *
      * @return a String representing the node.
      */
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.intInstruction.ILOAD " + var;
+        return "ILOAD " + var;
     }
 }

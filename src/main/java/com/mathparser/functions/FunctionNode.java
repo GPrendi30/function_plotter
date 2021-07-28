@@ -1,10 +1,11 @@
-package src.main.java.com.mathparser.functions;
+package com.mathparser.functions;
 
+import com.mathparser.ast.Node;
+import com.mathparser.ast.NodeException;
+import com.mathparser.ast.Type;
+import com.mathparser.program.Program;
 import java.util.ArrayList;
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.ast.NodeException;
-import src.main.java.com.mathparser.ast.Type;
-import src.main.java.com.mathparser.lexer.program.Program;
+
 
 public class FunctionNode extends Node {
 
@@ -24,7 +25,8 @@ public class FunctionNode extends Node {
 
     /**
      * Creates a new src.main.java.com.plotter.Function based on the name and Operation.
-     * @param name a String name for the function.
+     *
+     * @param name         a String name for the function.
      * @param numArguments the number of the arguments.
      */
     public FunctionNode(final String name, final int numArguments) {
@@ -39,6 +41,7 @@ public class FunctionNode extends Node {
 
     /**
      * Adds an argument to the function.
+     *
      * @param arg an argument node.
      * @throws NodeException a src.main.java.com.plotter.Function Exception.
      */
@@ -79,7 +82,7 @@ public class FunctionNode extends Node {
     @Override
     public void compile(final Program p) {
         if (parameters.size() - 1 != numArguments) {
-           //throw error
+            //throw error
         }
 
         for (final Node arg : parameters) {
@@ -106,7 +109,7 @@ public class FunctionNode extends Node {
             }
         }
         if (str.lastIndexOf(",") == str.length() - 1) {
-            str.delete(str.length() - 1,str.length());
+            str.delete(str.length() - 1, str.length());
         }
         str.append(")");
         return str.toString();
@@ -114,6 +117,7 @@ public class FunctionNode extends Node {
 
     /**
      * Get the functionOperation(what the function does)
+     *
      * @return the FunctionOperation of a function.
      */
     public FunctionInstruction getFunctionOperation() {
@@ -122,6 +126,7 @@ public class FunctionNode extends Node {
 
     /**
      * Get the name of the function.
+     *
      * @return a String name of a function.
      */
     public String getName() {
@@ -130,12 +135,12 @@ public class FunctionNode extends Node {
 
     /**
      * Creates a new Instance of a functionNode
+     *
      * @return a new Instance of a function.
      */
     public FunctionNode newInstance() {
         return null; // to be overridden.
     }
-
 
 
 }

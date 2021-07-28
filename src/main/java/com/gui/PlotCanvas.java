@@ -1,12 +1,14 @@
 package com.gui;
 
+import com.plotter.CursorListener;
+import com.plotter.Plot;
+import com.plotter.Cursor;
+import com.plotter.Function;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import src.main.java.com.plotter.Cursor;
-import src.main.java.com.plotter.CursorListener;
-import src.main.java.com.plotter.Function;
+
 
 /**
  * The src.main.java.com.gui.PlotCanvas is part of the GUI.
@@ -20,14 +22,15 @@ public final class PlotCanvas extends Canvas {
     private static final Dimension PREFERRED_SIZE = new Dimension(400, 300);
     private final Cursor cursor;
     private final Color[] colors = {Color.BLUE, Color.GREEN, Color.RED,
-        Color.CYAN,
-        Color.PINK,
-        Color.MAGENTA,
-        Color.ORANGE,};
-    
-    
+            Color.CYAN,
+            Color.PINK,
+            Color.MAGENTA,
+            Color.ORANGE,};
+
+
     /**
      * Create a src.main.java.com.gui.PlotCanvas for the given src.main.java.com.plotter.Plot.
+     *
      * @param plot The src.main.java.com.plotter.Plot to show
      */
     public PlotCanvas(final Plot plot) {
@@ -52,12 +55,12 @@ public final class PlotCanvas extends Canvas {
             }
         });
     }
-    
+
     @Override
     public Dimension getPreferredSize() {
         return PREFERRED_SIZE;
     }
-    
+
     @Override
     public void paintComponent(final Graphics g) {
         // fill the background with white
@@ -65,7 +68,7 @@ public final class PlotCanvas extends Canvas {
 
         g2d.setColor(Color.WHITE);
         g2d.fillRect(0, 0, getWidth(), getHeight());
-        
+
         // find min and max model y
         final double minModelY = range.getMin();
         final double maxModelY = range.getMax();
@@ -74,10 +77,10 @@ public final class PlotCanvas extends Canvas {
 
         // plot curve
         drawFunction(g2d, minModelY, maxModelY);
-        
+
         // draw x and y cursor
         drawCursors(g, minModelY, maxModelY);
-    }   
+    }
 
 
     private void drawFunction(final Graphics g, final double minModelY, final double maxModelY) {
@@ -102,14 +105,14 @@ public final class PlotCanvas extends Canvas {
                 final double yModel = function.compute(xModel);
                 final int vy = yModelToView(yModel, minModelY, maxModelY);
 
-                if (vx == (int) xModelToView(function.getRange().getMin())) {
+                if (vx == xModelToView(function.getRange().getMin())) {
                     prevX = vx;
                     prevY = vy;
                 }
 
                 g2d.setRenderingHint(
-                    RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
+                        RenderingHints.KEY_ANTIALIASING,
+                        RenderingHints.VALUE_ANTIALIAS_ON);
                 g2d.drawLine(prevX, prevY, vx, vy);
 
                 prevX = vx;
@@ -123,7 +126,7 @@ public final class PlotCanvas extends Canvas {
         final int viewY0 = yModelToView(0, minModelY, maxModelY);
         final int viewX0 = xModelToView(0);
         drawHorizontal(g2d, minModelY, maxModelY);
-        drawVertical(g2d,minModelY, maxModelY);
+        drawVertical(g2d, minModelY, maxModelY);
         g2d.setColor(Color.BLACK);
 
         g2d.drawLine(0, viewY0, getWidth(), viewY0);
@@ -133,7 +136,7 @@ public final class PlotCanvas extends Canvas {
 
     private void drawVertical(final Graphics2D g2d,
                               final double maxModelY,
-                              final double minModelY)  {
+                              final double minModelY) {
 
         final int stepsize = 20;
         final String numFormat = "%.2f";
@@ -153,8 +156,8 @@ public final class PlotCanvas extends Canvas {
         int count = 0;
         for (int i = 0; i < getHeight(); i++) {
             g2d.setColor(Color.LIGHT_GRAY);
-            g2d.drawLine( positiveY , 0, positiveY, getHeight());
-            g2d.drawLine(negativeY,0, negativeY, getHeight());
+            g2d.drawLine(positiveY, 0, positiveY, getHeight());
+            g2d.drawLine(negativeY, 0, negativeY, getHeight());
 
             if (count == 4) {
                 g2d.setColor(Color.DARK_GRAY);
@@ -178,7 +181,7 @@ public final class PlotCanvas extends Canvas {
             Xneg = Xneg < -5
                     ? Math.round(Xneg / 5) * 5
                     : Xneg;
-            count ++;
+            count++;
         }
     }
 
@@ -250,18 +253,18 @@ public final class PlotCanvas extends Canvas {
         g.drawLine(0, cursorViewY, getWidth(), cursorViewY);
         g.drawString("y = " + 2 * (-cursorViewY + viewY0), cursorViewX + 4, getHeight() - 4);
     }
-    
+
     private double xViewToModel(final int vx) {
-        return ((double)vx) / getWidth() * range.getExtent() + range.getMin();
+        return ((double) vx) / getWidth() * range.getExtent() + range.getMin();
     }
-    
+
     private int xModelToView(final double x) {
-        return (int)((x - range.getMin()) / range.getExtent() * getWidth());
+        return (int) ((x - range.getMin()) / range.getExtent() * getWidth());
 
     }
-    
+
     private int yModelToView(final double y, final double minY, final double maxY) {
-        return (int)(getHeight() - 1 - (y - minY) / (maxY - minY) * getHeight());
+        return (int) (getHeight() - 1 - (y - minY) / (maxY - minY) * getHeight());
     }
 
     /**

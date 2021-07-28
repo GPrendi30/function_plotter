@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
 /**
  * A special kind of src.main.java.com.mathparser.lexer.StringTokenFactory,
@@ -8,10 +8,11 @@ public class OperatorTokenFactory extends StringTokenFactory {
 
     private final TokenType tokenType;
 
-    
+
     /**
      * Create an src.main.java.com.mathparser.lexer.OperatorTokenFactory for tokens representing the given operator.
-     * @param operator the operator
+     *
+     * @param operator  the operator
      * @param tokenType the src.main.java.com.mathparser.lexer.TokenType corresponding to this operator
      */
     public OperatorTokenFactory(final String operator, final TokenType tokenType) {

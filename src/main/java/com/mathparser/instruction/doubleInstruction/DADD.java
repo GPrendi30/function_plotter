@@ -1,7 +1,11 @@
-package src.main.java.com.mathparser.instruction.doubleInstruction;
+package com.mathparser.instruction.doubleInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 public class DADD implements Instruction {
-    
+
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
@@ -10,6 +14,6 @@ public class DADD implements Instruction {
 
     @Override
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.doubleInstruction.DADD";
-    }    
+        return "DADD";
+    }
 }

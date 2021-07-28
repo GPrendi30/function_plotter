@@ -1,12 +1,16 @@
-package src.main.java.com.mathparser.ast.doublenodes;
+package com.mathparser.ast.doublenodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD;
+import com.mathparser.ast.NodeVariable;
+import com.mathparser.ast.Type;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.doubleInstruction.DLOAD;
+
 
 public class DoubleVariable extends NodeVariable {
 
     /**
      * Creates a new variable with a given doubleVarName.
+     *
      * @param doubleVarName a String
      */
     public DoubleVariable(final String doubleVarName) {
@@ -17,9 +21,9 @@ public class DoubleVariable extends NodeVariable {
     public Type getType() {
         return Type.DOUBLE;
     }
-    
+
     @Override
     public Instruction instruction() {
         return new DLOAD(varName);
-    }   
+    }
 }

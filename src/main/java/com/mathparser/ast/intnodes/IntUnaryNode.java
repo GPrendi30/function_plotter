@@ -1,7 +1,10 @@
-package src.main.java.com.mathparser.ast.intnodes;
+package com.mathparser.ast.intnodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.lexer.program.Program;
+
+import com.mathparser.ast.Node;
+import com.mathparser.ast.Type;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.Program;
 
 public class IntUnaryNode extends Node {
 
@@ -9,6 +12,7 @@ public class IntUnaryNode extends Node {
 
     /**
      * Create a new src.main.java.com.mathparser.ast.intnodes.IntUnaryNode node.
+     *
      * @param child a node
      */
     public IntUnaryNode(final Node child) {
@@ -20,12 +24,12 @@ public class IntUnaryNode extends Node {
     public Type getType() {
         return Type.INT;
     }
-    
+
     @Override
     public boolean isConstant() {
         return child.isConstant();
     }
-    
+
     @Override
     public void compile(final Program p) {
         child.compile(p);
@@ -34,6 +38,7 @@ public class IntUnaryNode extends Node {
 
     /**
      * Returns the jvm instruction of the node.
+     *
      * @return the jvm instruction of the node
      */
     public Instruction instruction() {

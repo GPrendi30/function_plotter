@@ -1,23 +1,39 @@
-package src.main.java.com.mathparser.parser;
+package com.mathparser.parser;
 
-/** A src.main.java.com.mathparser.parser.Parser for our Arith language
-        * (a simple language of arithmetic expressions).
-        *
-        * <code>
+import com.mathparser.ast.Node;
+import com.mathparser.ast.NodeException;
+import com.mathparser.ast.doublenodes.DoubleLiteral;
+import com.mathparser.ast.doublenodes.DoubleVariable;
+import com.mathparser.ast.generalnodes.GeneralAddition;
+import com.mathparser.ast.generalnodes.GeneralDivision;
+import com.mathparser.ast.generalnodes.GeneralMultiplication;
+import com.mathparser.ast.generalnodes.GeneralNegation;
+import com.mathparser.ast.generalnodes.GeneralSubtraction;
+import com.mathparser.ast.intnodes.IntLiteral;
+import com.mathparser.functions.*;
+import com.mathparser.lexer.LexicalAnalyzer;
+import com.mathparser.lexer.TokenType;
+
+/**
+ * A Parser for our Arith language
+ * (a simple language of arithmetic expressions).
+ *
+ * <code>
  * EXPRESSION   ::= [ "+" | "-" ] TERM { ( "+" | "-" ) TERM }
-         * TERM         ::= FACTOR { ( "*" | "/" ) FACTOR }
-         * FACTOR       ::= Literal |
-         *                  Identifier|
-         *                  "(" EXPRESSION ")" |
-         *                  FUNCTION
-         * FUNCTION     ::= src.main.java.com.mathparser.functions.SIN|src.main.java.com.mathparser.functions.COS|src.main.java.com.mathparser.functions.SUM (EXPRESSION {, EXPRESSION})
-         * </code>
-        */
+ * TERM         ::= FACTOR { ( "*" | "/" ) FACTOR }
+ * FACTOR       ::= Literal |
+ * Identifier|
+ * "(" EXPRESSION ")" |
+ * FUNCTION
+ * FUNCTION     ::= SIN|COS|SUM (EXPRESSION {, EXPRESSION})
+ * </code>
+ */
 public final class ArithParser implements Parser {
     private LexicalAnalyzer lexer;
 
     /**
      * Parse a program in the Arith language.
+     *
      * @param sourceCode The source code of the program in the Arith language
      * @return an AST of the program
      */
@@ -116,7 +132,7 @@ public final class ArithParser implements Parser {
             }
 
             final Node right = parseFactor();
-            left =  isMul
+            left = isMul
                     ? new GeneralMultiplication(left, right)
                     : new GeneralDivision(left, right);
         }
@@ -131,9 +147,9 @@ public final class ArithParser implements Parser {
      * <p>EBNF:
      * <code>
      * FACTOR ::=
-     *          Literal |
-     *          Identifier |
-     *          "(" EXPRESSION ")"
+     * Literal |
+     * Identifier |
+     * "(" EXPRESSION ")"
      * </code>
      *
      * @return a src.main.java.com.mathparser.ast.Node representing the factor
@@ -142,25 +158,25 @@ public final class ArithParser implements Parser {
 
         Node res;
         switch (lexer.getCurrentToken().getType()) {
-            case TokenType.DOUBLELITERAL :
+            case DOUBLELITERAL:
                 res = new DoubleLiteral(Double.parseDouble(lexer.getCurrentToken().getText()));
 
                 lexer.fetchNextToken();
                 break;
 
-            case TokenType.INTLITERAL:
+            case INTLITERAL:
                 res = new IntLiteral(Integer.parseInt(lexer.getCurrentToken().getText()));
 
                 lexer.fetchNextToken();
                 break;
 
-            case TokenType.IDENTIFIER:
+            case IDENTIFIER:
                 res = new DoubleVariable(lexer.getCurrentToken().getText());
 
                 lexer.fetchNextToken();
                 break;
 
-            case TokenType.OPEN_PAREN:
+            case OPEN_PAREN:
 
                 lexer.fetchNextToken();
 
@@ -175,7 +191,7 @@ public final class ArithParser implements Parser {
                 lexer.fetchNextToken();
                 break;
 
-            case TokenType.FUNCTION:
+            case FUNCTION:
                 res = parseFunction();
                 break;
 
@@ -196,6 +212,7 @@ public final class ArithParser implements Parser {
      * <code>
      * FUNCTION  ::= src.main.java.com.mathparser.functions.SIN|src.main.java.com.mathparser.functions.COS|src.main.java.com.mathparser.functions.SUM (EXPRESSION {, EXPRESSION})
      * </code>
+     *
      * @return a src.main.java.com.mathparser.ast.Node representing the function
      */
     private Node parseFunction() throws ArithSyntaxException {
@@ -241,28 +258,28 @@ public final class ArithParser implements Parser {
         }
 
         throw new ArithSyntaxException("Keyword not found, "
-                    + lexer.getCurrentToken().getStartPosition());
+                + lexer.getCurrentToken().getStartPosition());
     }
 
     private enum DeclaredFunction {
 
-        SUM("src.main.java.com.mathparser.functions.SUM", new SUM()),
-        COS("src.main.java.com.mathparser.functions.COS", new COS()),
-        SIN("src.main.java.com.mathparser.functions.SIN", new SIN()),
-        MIN("src.main.java.com.mathparser.functions.MIN", new MIN()),
+        SUM("SUM", new SUM()),
+        COS("COS", new COS()),
+        SIN("SIN", new SIN()),
+        MIN("MIN", new MIN()),
         MAX("MAX", new MAX()),
-        LOG("src.main.java.com.mathparser.functions.LOG", new LOG()),
-        ABS("src.main.java.com.mathparser.functions.ABS", new ABS()),
-        AVG("src.main.java.com.mathparser.functions.AVG", new AVG()),
-        EXP("src.main.java.com.mathparser.functions.EXP", new EXP()),
-        POW("src.main.java.com.mathparser.functions.POW", new POW()),
+        LOG("LOG", new LOG()),
+        ABS("ABS", new ABS()),
+        AVG("AVG", new AVG()),
+        EXP("EXP", new EXP()),
+        POW("POW", new POW()),
         MOD("MOS", new MOD());
 
 
-        private String name;
-        private FunctionNode function;
+        private final String name;
+        private final FunctionNode function;
 
-        private DeclaredFunction(final String name, final FunctionNode function) {
+        DeclaredFunction(final String name, final FunctionNode function) {
             this.name = name;
             this.function = function;
         }

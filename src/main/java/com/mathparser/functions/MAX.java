@@ -1,4 +1,7 @@
-package src.main.java.com.mathparser.functions;
+package com.mathparser.functions;
+
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 public class MAX extends FunctionNode {
 
@@ -6,7 +9,7 @@ public class MAX extends FunctionNode {
      * Creates a src.main.java.com.mathparser.functions.MAX function. Maximum.
      */
     public MAX() {
-        super("MAX",2);
+        super("MAX", 2);
     }
 
 

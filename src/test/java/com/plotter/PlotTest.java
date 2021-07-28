@@ -1,14 +1,9 @@
-package src.test.java.com.plotter;
+package com.plotter;
 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import src.main.java.com.plotter.Cursor;
-import src.main.java.com.plotter.Function;
-import src.main.java.com.plotter.FunctionException;
-import src.main.java.com.plotter.Plot;
-import src.main.java.com.plotter.Range;
 
 
 public class PlotTest {

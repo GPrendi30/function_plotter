@@ -1,20 +1,19 @@
 package com.mathparser.ast;
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import com.mathparser.ast.doublenodes.DoubleAddition;
+import com.mathparser.ast.doublenodes.DoubleDivision;
+import com.mathparser.ast.doublenodes.DoubleLiteral;
+import com.mathparser.ast.doublenodes.DoubleMultiplication;
+import com.mathparser.ast.doublenodes.DoubleNegation;
+import com.mathparser.ast.doublenodes.DoubleSubtraction;
+import com.mathparser.ast.doublenodes.DoubleToInt;
+import com.mathparser.ast.doublenodes.DoubleVariable;
+import com.mathparser.ast.intnodes.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.ast.Type;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleAddition;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleDivision;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleLiteral;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleMultiplication;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleNegation;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleSubtraction;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleToInt;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleVariable;
-import src.main.java.com.mathparser.ast.intnodes.*;
 
 
 /**
@@ -188,7 +187,7 @@ public class NodeTest {
         assertEquals(Type.DOUBLE, e.getType());
     }
 
-    // src.main.java.com.mathparser.ast.intnodes.IntAddition Tests
+    // IntAddition Tests
     @Test
     public void testDoubleAdditionLiteralLiteral() {
         Node e = new DoubleAddition(new DoubleLiteral(5.1), new DoubleLiteral(6.1));

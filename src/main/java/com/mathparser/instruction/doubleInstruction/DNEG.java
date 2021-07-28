@@ -1,4 +1,8 @@
-package src.main.java.com.mathparser.instruction.doubleInstruction;
+package com.mathparser.instruction.doubleInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 public class DNEG implements Instruction {
 
@@ -10,6 +14,6 @@ public class DNEG implements Instruction {
 
     @Override
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.doubleInstruction.DNEG";
+        return "DNEG";
     }
 }

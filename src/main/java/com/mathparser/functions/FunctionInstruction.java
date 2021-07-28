@@ -1,10 +1,13 @@
-package src.main.java.com.mathparser.functions;
+package com.mathparser.functions;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.Storage;
 
 public interface FunctionInstruction extends Instruction {
 
     @Override
-    public abstract void execute(final Storage storage);
+    void execute(final Storage storage);
 
     @Override
-    public abstract String toString();
+    String toString();
 }

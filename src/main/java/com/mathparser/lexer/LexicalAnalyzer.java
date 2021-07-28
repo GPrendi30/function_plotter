@@ -1,11 +1,11 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
+import com.mathparser.parser.ArithSyntaxException;
 import java.util.Arrays;
-import src.main.java.com.mathparser.parser.ArithSyntaxException;
 
 /**
  * A src.main.java.com.mathparser.lexer.LexicalAnalyzer breaks a String into Tokens.
- * 
+ *
  * <pre>
  * lexer.fetchNextToken();
  * </pre>
@@ -15,14 +15,15 @@ public final class LexicalAnalyzer {
     private Token token;
     private String text;
     private int position;
-    private TokenFactory[] tokenFactories;
+    private final TokenFactory[] tokenFactories;
 
-    
+
     /**
-     * Create an analyzer for the given text, 
+     * Create an analyzer for the given text,
      * using the given factories to recognize and create tokens.
+     *
      * @param expression The text to analyze
-     * @param factories The token factories to use
+     * @param factories  The token factories to use
      */
     public LexicalAnalyzer(final String expression, final TokenFactory[] factories) {
         tokenFactories = Arrays.copyOf(factories, factories.length);
@@ -31,36 +32,38 @@ public final class LexicalAnalyzer {
 
     /**
      * Create an analyzer for the given text.
+     *
      * @param expression The text to analyze
      */
     public LexicalAnalyzer(final String expression) {
-        this(expression, new TokenFactory[] {
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.SIN"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.COS"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.SUM"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.ABS"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.AVG"),
-            new FunctionTokenFactory("MAX"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.MIN"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.MOD"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.POW"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.LOG"),
-            new FunctionTokenFactory("src.main.java.com.mathparser.functions.EXP"),
-            new IdentifierTokenFactory(),
-            new LiteralTokenFactory(),
-            new OperatorTokenFactory("+", TokenType.PLUS),
-            new OperatorTokenFactory("-", TokenType.MINUS),
-            new OperatorTokenFactory("*", TokenType.STAR),
-            new OperatorTokenFactory("/", TokenType.SLASH),
-            new OperatorTokenFactory("%", TokenType.PERCENT),
-            new OperatorTokenFactory("(", TokenType.OPEN_PAREN),
-            new OperatorTokenFactory(")", TokenType.CLOSED_PAREN),
-            new OperatorTokenFactory(",", TokenType.COMMA),
+        this(expression, new TokenFactory[]{
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.SIN"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.COS"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.SUM"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.ABS"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.AVG"),
+                new FunctionTokenFactory("MAX"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.MIN"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.MOD"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.POW"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.LOG"),
+                new FunctionTokenFactory("src.main.java.com.mathparser.functions.EXP"),
+                new IdentifierTokenFactory(),
+                new LiteralTokenFactory(),
+                new OperatorTokenFactory("+", TokenType.PLUS),
+                new OperatorTokenFactory("-", TokenType.MINUS),
+                new OperatorTokenFactory("*", TokenType.STAR),
+                new OperatorTokenFactory("/", TokenType.SLASH),
+                new OperatorTokenFactory("%", TokenType.PERCENT),
+                new OperatorTokenFactory("(", TokenType.OPEN_PAREN),
+                new OperatorTokenFactory(")", TokenType.CLOSED_PAREN),
+                new OperatorTokenFactory(",", TokenType.COMMA),
         });
     }
 
     /**
      * Provide a new text to analyze.
+     *
      * @param expression The text to analyze
      */
     public void setText(final String expression) {
@@ -74,6 +77,7 @@ public final class LexicalAnalyzer {
 
     /**
      * Ask the analyzer to move to the next token in the text.
+     *
      * @throws ArithSyntaxException a src.main.java.com.mathparser.lexer.LexicalAnalyzer exception.
      */
     public void fetchNextToken() throws ArithSyntaxException {
@@ -82,6 +86,7 @@ public final class LexicalAnalyzer {
 
     /**
      * Scan the text and extract the next token.
+     *
      * @return the next token
      * @throws Exception;
      */
@@ -115,6 +120,7 @@ public final class LexicalAnalyzer {
 
     /**
      * Get the current token.
+     *
      * @return the current token
      */
     public Token getCurrentToken() {

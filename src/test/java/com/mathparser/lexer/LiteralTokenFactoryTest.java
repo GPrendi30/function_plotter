@@ -1,11 +1,9 @@
-package src.test.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import src.main.java.com.mathparser.lexer.LiteralTokenFactory;
-import src.main.java.com.mathparser.lexer.TokenType;
 
 
 public class LiteralTokenFactoryTest {

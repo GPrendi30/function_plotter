@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer.program;
+package com.mathparser.program;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,19 +9,20 @@ import java.util.Map;
  * (a map from variable names to variable values).
  */
 public class VariableTable {
-    
-    private final Map<String,Double> variables;
-    
-    
+
+    private final Map<String, Double> variables;
+
+
     /**
      * Create a new empty variable table.
      */
     public VariableTable() {
-        variables = new HashMap<String,Double>();
+        variables = new HashMap<String, Double>();
     }
-    
+
     /**
      * Get the value of the variable with the given name.
+     *
      * @param name The name of the variable.
      * @return The Integer value of the variable with the given name.
      */
@@ -32,17 +33,19 @@ public class VariableTable {
 
     /**
      * Get the value of the variable with the given name.
+     *
      * @param name The name of the variable.
      * @return The Double value of the variable with the given name.
      */
     public Double getDouble(final String name) {
         return variables.get(name);
     }
-    
-    
+
+
     /**
      * Set the Int value of the variable with the given name.
-     * @param name The name of the variable.
+     *
+     * @param name  The name of the variable.
      * @param value The new value of the variable.
      */
     public void iset(final String name, final Integer value) {
@@ -51,7 +54,8 @@ public class VariableTable {
 
     /**
      * Set the value of the variable with the given name.
-     * @param name The name of the variable.
+     *
+     * @param name  The name of the variable.
      * @param value The new value of the variable.
      */
     public void dset(final String name, final Double value) {
@@ -59,5 +63,4 @@ public class VariableTable {
     }
 
 
-    
 }

@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
 /**
  * A special kind of src.main.java.com.mathparser.lexer.RegExTokenFactory that produces tokens
@@ -21,9 +21,9 @@ public class LiteralTokenFactory extends RegExTokenFactory {
 
         final String tokenContent = getTokenText();
         final int position = getTokenStartPosition();
-        return  tokenContent.contains(".")
-                ?  new Token(TokenType.DOUBLELITERAL, tokenContent, position)
-                :  new Token(TokenType.INTLITERAL, tokenContent, position);
+        return tokenContent.contains(".")
+                ? new Token(TokenType.DOUBLELITERAL, tokenContent, position)
+                : new Token(TokenType.INTLITERAL, tokenContent, position);
     }
 
 }

@@ -1,8 +1,12 @@
-package src.main.java.com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.intInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 /**
- * src.main.java.com.mathparser.instruction.intInstruction.INEG negates the top value from the src.main.java.com.mathparser.lexer.program.OperandStack
- * and ipushes the result back to the src.main.java.com.mathparser.lexer.program.OperandStack.
+ * INEG negates the top value from the OperandStack
+ * and ipushes the result back to the OperandStack.
  */
 public class INEG implements Instruction {
 
@@ -11,10 +15,10 @@ public class INEG implements Instruction {
         final OperandStack stack = storage.getOperandStack();
         stack.ipush(-stack.ipop());
     }
-    
+
     @Override
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.intInstruction.INEG";
+        return "INEG";
     }
 
 }

@@ -1,9 +1,13 @@
-package src.main.java.com.mathparser.instruction.intInstruction;
+package com.mathparser.instruction.intInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 /**
- * src.main.java.com.mathparser.instruction.intInstruction.ISUB subtracts the top value from the second-to-top value
- * of the src.main.java.com.mathparser.lexer.program.OperandStack,
- * and ipushes the result back to the src.main.java.com.mathparser.lexer.program.OperandStack.
+ * ISUB subtracts the top value from the second-to-top value
+ * of the OperandStack,
+ * and pushes the result back to the OperandStack.
  */
 public class ISUB implements Instruction {
 
@@ -12,10 +16,10 @@ public class ISUB implements Instruction {
         final OperandStack stack = storage.getOperandStack();
         stack.ipush(-stack.ipop() + stack.ipop());
     }
-        
+
     @Override
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.intInstruction.ISUB";
+        return "ISUB";
     }
 
 }

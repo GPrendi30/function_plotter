@@ -1,16 +1,16 @@
-package src.main.java.com.mathparser.ast;
+package com.mathparser.ast;
 
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.ast.Type;
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.lexer.program.Program;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.Program;
 
 public class NodeLiteral extends Node {
-    
+
     protected final Number value;
-    
+
     /**
      * Create a new src.main.java.com.mathparser.ast.NodeLiteral node.
+     *
      * @param value the integer doubleValue this node evaluates to
      */
     public NodeLiteral(final Number value) {
@@ -27,7 +27,7 @@ public class NodeLiteral extends Node {
     public boolean isConstant() {
         return true;
     }
-    
+
     @Override
     public void compile(final Program p) {
         p.append(instruction());
@@ -35,6 +35,7 @@ public class NodeLiteral extends Node {
 
     /**
      * Returns the JVM instruction of the src.main.java.com.mathparser.ast.Node.
+     *
      * @return the JVM instruction of the src.main.java.com.mathparser.ast.Node.
      */
     public Instruction instruction() {
@@ -45,5 +46,5 @@ public class NodeLiteral extends Node {
     public String toString() {
         return "" + this.value;
     }
-    
+
 }

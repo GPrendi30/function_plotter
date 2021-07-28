@@ -1,6 +1,7 @@
-package src.main.java.com.mathparser.ast.generalnodes;
+package com.mathparser.ast.generalnodes;
 
-import src.main.java.com.mathparser.ast.generalnodes.GeneralNode;
+import com.mathparser.ast.Node;
+import com.mathparser.ast.Type;
 
 public class BinaryGeneralNode extends GeneralNode {
 
@@ -9,7 +10,8 @@ public class BinaryGeneralNode extends GeneralNode {
 
     /**
      * A Wrapper for binaryNodes.
-     * @param left lhs src.main.java.com.mathparser.ast.Node
+     *
+     * @param left  lhs src.main.java.com.mathparser.ast.Node
      * @param right rhs src.main.java.com.mathparser.ast.Node
      */
     public BinaryGeneralNode(final Node left, final Node right) {
@@ -22,6 +24,7 @@ public class BinaryGeneralNode extends GeneralNode {
 
     /**
      * Gets the type of the children Nodes.
+     *
      * @return the type of the childer Nodes.
      */
     public Type getChildrenType() {

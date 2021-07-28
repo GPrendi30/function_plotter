@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
 public class FunctionTokenFactory extends StringTokenFactory {
 
@@ -7,6 +7,7 @@ public class FunctionTokenFactory extends StringTokenFactory {
 
     /**
      * A Factory for functions
+     *
      * @param function a String representing a function keyword.
      */
     public FunctionTokenFactory(final String function) {

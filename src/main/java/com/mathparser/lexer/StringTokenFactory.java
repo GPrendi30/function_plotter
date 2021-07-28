@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
 /**
  * A special kind of src.main.java.com.mathparser.lexer.TokenFactory
@@ -10,9 +10,10 @@ public class StringTokenFactory extends TokenFactory {
     private String text;
     private int startFrom;
 
-    
+
     /**
      * Create a factory that looks for the given tokenText.
+     *
      * @param tokenText the exact text of the kind of token we can produce
      */
     public StringTokenFactory(final String tokenText) {
@@ -22,6 +23,7 @@ public class StringTokenFactory extends TokenFactory {
 
     /**
      * Get the text of the tokens we can produce.
+     *
      * @return The exact text of the kind of token we can produce
      */
     public String getTokenText() {
@@ -32,9 +34,9 @@ public class StringTokenFactory extends TokenFactory {
     public void setText(final String text) {
         this.text = text;
     }
-    
+
     @Override
-    public int getTokenLength() { 
+    public int getTokenLength() {
         return tokenText.length();
     }
 
@@ -47,6 +49,7 @@ public class StringTokenFactory extends TokenFactory {
 
     /**
      * Get the position at which we last tried to find a token.
+     *
      * @return The start position of the last call to find(...)
      */
     protected int getTokenStartPosition() {

@@ -1,50 +1,46 @@
-package src.test.java.com.mathparser.program;
+package com.mathparser.program;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleAddition;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleDivision;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleLiteral;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleMultiplication;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleNegation;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleSubtraction;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleToInt;
-import src.main.java.com.mathparser.ast.doublenodes.DoubleVariable;
-import src.main.java.com.mathparser.ast.intnodes.IntAddition;
-import src.main.java.com.mathparser.ast.intnodes.IntDivision;
-import src.main.java.com.mathparser.ast.intnodes.IntLiteral;
-import src.main.java.com.mathparser.ast.intnodes.IntMultiplication;
-import src.main.java.com.mathparser.ast.intnodes.IntNegation;
-import src.main.java.com.mathparser.ast.intnodes.IntSubtraction;
-import src.main.java.com.mathparser.ast.intnodes.IntToDouble;
-import src.main.java.com.mathparser.ast.intnodes.IntVariable;
-import src.main.java.com.mathparser.instruction.doubleInstruction.BDPUSH;
-import src.main.java.com.mathparser.instruction.doubleInstruction.D2I;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DADD;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DDIV;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DMUL;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DNEG;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DSUB;
-import src.main.java.com.mathparser.instruction.intInstruction.BIPUSH;
-import src.main.java.com.mathparser.instruction.intInstruction.I2D;
-import src.main.java.com.mathparser.instruction.intInstruction.IADD;
-import src.main.java.com.mathparser.instruction.intInstruction.IDIV;
-import src.main.java.com.mathparser.instruction.intInstruction.ILOAD;
-import src.main.java.com.mathparser.instruction.intInstruction.IMUL;
-import src.main.java.com.mathparser.instruction.intInstruction.INEG;
-import src.main.java.com.mathparser.instruction.intInstruction.ISUB;
-import src.main.java.com.mathparser.lexer.program.Compiler;
-import src.main.java.com.mathparser.lexer.program.Program;
+import com.mathparser.ast.Node;
+import com.mathparser.ast.doublenodes.DoubleAddition;
+import com.mathparser.ast.doublenodes.DoubleDivision;
+import com.mathparser.ast.doublenodes.DoubleLiteral;
+import com.mathparser.ast.doublenodes.DoubleMultiplication;
+import com.mathparser.ast.doublenodes.DoubleNegation;
+import com.mathparser.ast.doublenodes.DoubleSubtraction;
+import com.mathparser.ast.doublenodes.DoubleToInt;
+import com.mathparser.ast.doublenodes.DoubleVariable;
+import com.mathparser.ast.intnodes.IntAddition;
+import com.mathparser.ast.intnodes.IntDivision;
+import com.mathparser.ast.intnodes.IntLiteral;
+import com.mathparser.ast.intnodes.IntMultiplication;
+import com.mathparser.ast.intnodes.IntNegation;
+import com.mathparser.ast.intnodes.IntSubtraction;
+import com.mathparser.ast.intnodes.IntToDouble;
+import com.mathparser.ast.intnodes.IntVariable;
+import com.mathparser.instruction.doubleInstruction.BDPUSH;
+import com.mathparser.instruction.doubleInstruction.D2I;
+import com.mathparser.instruction.doubleInstruction.DADD;
+import com.mathparser.instruction.doubleInstruction.DDIV;
+import com.mathparser.instruction.doubleInstruction.DLOAD;
+import com.mathparser.instruction.doubleInstruction.DMUL;
+import com.mathparser.instruction.doubleInstruction.DNEG;
+import com.mathparser.instruction.doubleInstruction.DSUB;
+import com.mathparser.instruction.intInstruction.BIPUSH;
+import com.mathparser.instruction.intInstruction.I2D;
+import com.mathparser.instruction.intInstruction.IADD;
+import com.mathparser.instruction.intInstruction.IDIV;
+import com.mathparser.instruction.intInstruction.ILOAD;
+import com.mathparser.instruction.intInstruction.IMUL;
+import com.mathparser.instruction.intInstruction.INEG;
+import com.mathparser.instruction.intInstruction.ISUB;
 
 
 /**
- * Test compile() of src.main.java.com.mathparser.ast.Node subclasses
- * (and toString() of src.main.java.com.mathparser.instruction.Instruction subclasses).
+ * Test compile() of com.mathparser.ast.Node subclasses
+ * (and toString() of com.mathparser.instruction.Instruction subclasses).
  * This tests that the compile() methods generate the correct
  * sequence of Instructions.
  */

@@ -1,17 +1,20 @@
 package com.mathparser.ast.doublenodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.doubleInstruction.BDPUSH;
+import com.mathparser.ast.NodeLiteral;
+import com.mathparser.ast.Type;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.doubleInstruction.BDPUSH;
 
 /**
- * A Literal is an AST node that 
+ * A Literal is an AST node that
  * corresponds to a literal integer doubleValue
  * (a number in the source code).
  */
 public class DoubleLiteral extends NodeLiteral {
-    
+
     /**
      * Creates a new literal with a given doubleValue.
+     *
      * @param doubleValue a double vaulue for src.main.java.com.mathparser.ast.doublenodes.DoubleLiteral
      */
     public DoubleLiteral(final double doubleValue) {
@@ -22,10 +25,10 @@ public class DoubleLiteral extends NodeLiteral {
     public Type getType() {
         return Type.DOUBLE;
     }
-    
+
     @Override
     public Instruction instruction() {
         return new BDPUSH(value.doubleValue());
-    }   
-    
+    }
+
 }

@@ -1,17 +1,14 @@
-package src.test.java.com.mathparser.program;
+package com.mathparser.program;
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.intInstruction.BIPUSH;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import org.junit.Test;
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.intInstruction.BIPUSH;
-import src.main.java.com.mathparser.lexer.program.Program;
-
 
 /**
- * Test append(), getLength(), get(), toString(), and execute() of src.main.java.com.mathparser.lexer.program.Program
- * (and toString() and execute() of src.main.java.com.mathparser.instruction.Instruction subclasses).
+ * Test append(), getLength(), get(), toString(), and execute() of Program
+ * (and toString() and execute() of Instruction subclasses).
  */
 public class ProgramTest {
 

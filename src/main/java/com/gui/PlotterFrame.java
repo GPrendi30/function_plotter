@@ -1,8 +1,7 @@
 package com.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
+import com.plotter.Plot;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -11,7 +10,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import src.main.java.com.plotter.Plot;
 
 /**
  * The main frame of the src.main.java.com.plotter.Function Plotter application.
@@ -24,6 +22,7 @@ public final class PlotterFrame extends JFrame {
 
     /**
      * Create a new src.main.java.com.gui.PlotterFrame for the given src.main.java.com.plotter.Plot.
+     *
      * @param plot The model to show.
      */
     public PlotterFrame(final Plot plot) {
@@ -109,5 +108,5 @@ public final class PlotterFrame extends JFrame {
         });
         pack();
     }
-    
+
 }

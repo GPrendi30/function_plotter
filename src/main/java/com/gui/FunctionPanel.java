@@ -1,33 +1,26 @@
 package com.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import com.plotter.Function;
+import com.plotter.FunctionException;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import src.main.java.com.plotter.Function;
-import src.main.java.com.plotter.FunctionException;
+import javax.swing.*;
 
 public class FunctionPanel extends JComponent {
 
     private final Function function;
-    private SidePanel parent;
-    private static ImageIcon enable = new ImageIcon("src/main/resources/enable32.png");
-    private static ImageIcon disable = new ImageIcon("src/main/resources/disable32.png");
-    private static ImageIcon remove = new ImageIcon("src/main/resources/remove32.png");
+    private final SidePanel parent;
+    private static final ImageIcon enable = new ImageIcon("src/main/resources/enable32.png");
+    private static final ImageIcon disable = new ImageIcon("src/main/resources/disable32.png");
+    private static final ImageIcon remove = new ImageIcon("src/main/resources/remove32.png");
 
 
     /**
      * Creates a functionPanel.
+     *
      * @param parent the parent of the panel.
-     * @param func the function.
+     * @param func   the function.
      */
     public FunctionPanel(final SidePanel parent, final Function func) {
         super();
@@ -85,7 +78,6 @@ public class FunctionPanel extends JComponent {
         rangePanel.setMaximumSize(new Dimension(200, 30));
 
 
-
         final JTextField rangeMinField = new JTextField("0");
         rangeMinField.setPreferredSize(new Dimension(50, 30));
         rangeMinField.addActionListener(new ActionListener() {
@@ -122,7 +114,7 @@ public class FunctionPanel extends JComponent {
                     function.setExpression(expressionField.getText());
                 } catch (final FunctionException exception) {
                     JOptionPane.showMessageDialog(null,
-                             "Expression Field error encountered: \n" + exception.getMessage());
+                            "Expression Field error encountered: \n" + exception.getMessage());
                 }
             }
         });

@@ -1,20 +1,16 @@
-package src.test.java.com.mathparser.parser;
+package com.mathparser.parser;
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import com.mathparser.ast.Node;
+import com.mathparser.ast.intnodes.IntAddition;
+import com.mathparser.ast.intnodes.IntDivision;
+import com.mathparser.ast.intnodes.IntLiteral;
+import com.mathparser.ast.intnodes.IntMultiplication;
+import com.mathparser.ast.intnodes.IntNegation;
+import com.mathparser.ast.intnodes.IntSubtraction;
+import com.mathparser.ast.intnodes.IntVariable;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.ast.intnodes.IntAddition;
-import src.main.java.com.mathparser.ast.intnodes.IntDivision;
-import src.main.java.com.mathparser.ast.intnodes.IntLiteral;
-import src.main.java.com.mathparser.ast.intnodes.IntMultiplication;
-import src.main.java.com.mathparser.ast.intnodes.IntNegation;
-import src.main.java.com.mathparser.ast.intnodes.IntSubtraction;
-import src.main.java.com.mathparser.ast.intnodes.IntVariable;
-import src.main.java.com.mathparser.parser.ArithParser;
-import src.main.java.com.mathparser.parser.Parser;
-
+import sun.tools.jstat.Literal;
 
 /**
  * This test class will test some aspects of the rules
@@ -67,7 +63,7 @@ public class ArithParserTest {
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new IntNegation(new Literal(11));
+        final Node expectedRoot = new IntNegation(new IntLiteral(11));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }

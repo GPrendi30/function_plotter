@@ -1,4 +1,7 @@
-package src.main.java.com.mathparser.functions;
+package com.mathparser.functions;
+
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
 
 public class SUM extends FunctionNode {
 

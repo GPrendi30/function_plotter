@@ -1,6 +1,10 @@
-package src.main.java.com.mathparser.ast.generalnodes;
+package com.mathparser.ast.generalnodes;
 
-import src.main.java.com.mathparser.lexer.program.Program;
+import com.mathparser.ast.Node;
+import com.mathparser.ast.Type;
+import com.mathparser.ast.doublenodes.DoubleToInt;
+import com.mathparser.ast.intnodes.IntToDouble;
+import com.mathparser.program.Program;
 
 public class GeneralNode extends Node {
 

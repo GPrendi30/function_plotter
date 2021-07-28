@@ -1,14 +1,9 @@
-package src.test.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import src.main.java.com.mathparser.lexer.LexicalAnalyzer;
-import src.main.java.com.mathparser.lexer.OperatorTokenFactory;
-import src.main.java.com.mathparser.lexer.Token;
-import src.main.java.com.mathparser.lexer.TokenFactory;
-import src.main.java.com.mathparser.lexer.TokenType;
 
 
 public class LexicalAnalyzerTest {

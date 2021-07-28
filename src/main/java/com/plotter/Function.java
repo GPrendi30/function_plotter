@@ -1,13 +1,12 @@
-package src.main.java.com.plotter;
+package com.plotter;
 
+import com.mathparser.ast.Node;
+import com.mathparser.parser.ArithParser;
+import com.mathparser.parser.ArithSyntaxException;
+import com.mathparser.parser.Parser;
+import com.mathparser.program.Program;
+import com.mathparser.program.VariableTable;
 import java.util.ArrayList;
-import src.main.java.com.mathparser.ast.Node;
-import src.main.java.com.mathparser.parser.ArithParser;
-import src.main.java.com.mathparser.parser.ArithSyntaxException;
-import src.main.java.com.mathparser.parser.Parser;
-import src.main.java.com.mathparser.lexer.program.Program;
-import src.main.java.com.mathparser.lexer.program.VariableTable;
-
 
 /**
  * The src.main.java.com.plotter.Function is the most important part of the "model"
@@ -22,9 +21,10 @@ public final class Function {
     private Program program;
     private boolean drawable;
     private Range range;
-    
+
     /**
      * Create a src.main.java.com.plotter.Function based on the given expression.
+     *
      * @param expressionText The expression (a function of x).
      * @throws FunctionException throws src.main.java.com.plotter.FunctionException if the expression can't be parsed.
      */
@@ -32,11 +32,12 @@ public final class Function {
         listeners = new ArrayList<>();
         setExpression(expressionText);
         drawable = true;
-        range = new Range(0,0);
+        range = new Range(0, 0);
     }
-    
+
     /**
      * Change the expression underlying this src.main.java.com.plotter.Function.
+     *
      * @param expressionText The new expression (a function of x).
      * @throws FunctionException throws src.main.java.com.plotter.FunctionException if the expression can't be parsed.
      */
@@ -57,6 +58,7 @@ public final class Function {
 
     /**
      * Set min in the function range.
+     *
      * @param min double min of the range.
      */
     public final void setMin(final double min) {
@@ -66,6 +68,7 @@ public final class Function {
 
     /**
      * Set max in the function range.
+     *
      * @param max double max of the range.
      */
     public final void setMax(final double max) {
@@ -75,6 +78,7 @@ public final class Function {
 
     /**
      * Get the expression defining this function.
+     *
      * @return the expression.
      */
     public final String getExpression() {
@@ -83,6 +87,7 @@ public final class Function {
 
     /**
      * Get the function range.
+     *
      * @return the function range.
      */
     public final Range getRange() {
@@ -91,6 +96,7 @@ public final class Function {
 
     /**
      * Evaluate the function at the given x.
+     *
      * @param x The value in which to evaluate the function.
      * @return the value of the function in the given x.
      */
@@ -103,6 +109,7 @@ public final class Function {
 
     /**
      * Checks if the function is drawable.
+     *
      * @return true if drawable, else false.
      */
     public boolean isDrawable() {
@@ -111,6 +118,7 @@ public final class Function {
 
     /**
      * Set the drawable state.
+     *
      * @param drawable a boolean.
      */
     public void setDrawable(final boolean drawable) {
@@ -121,6 +129,7 @@ public final class Function {
 
     /**
      * Adds a new function listener.
+     *
      * @param li a src.main.java.com.plotter.Function Listener
      */
     public void addFunctionListener(final FunctionListener li) {
@@ -129,12 +138,13 @@ public final class Function {
 
     /**
      * Removes a function listener.
+     *
      * @param li a src.main.java.com.plotter.Function Listener
      */
     public void removeFunctionListener(final FunctionListener li) {
         listeners.remove(li);
     }
-    
+
     private void fireFunctionChanged() {
         for (final FunctionListener fi : listeners) {
             fi.functionChanged(this);
@@ -143,6 +153,7 @@ public final class Function {
 
     /**
      * Set the range to plot the function.
+     *
      * @param min double min of the range.
      * @param max double max of the range.
      */

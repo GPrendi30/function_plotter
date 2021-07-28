@@ -1,4 +1,4 @@
-package src.main.java.com.plotter;
+package com.plotter;
 
 import java.util.ArrayList;
 
@@ -15,11 +15,12 @@ public final class Plot {
     private final ArrayList<PlotListener> listeners;
     private final Range range;
     private final Cursor cursor;
-    
-    
+
+
     /**
      * Create a new src.main.java.com.plotter.Plot of the given src.main.java.com.plotter.Function, with the given src.main.java.com.plotter.Range and src.main.java.com.plotter.Cursor.
-     * @param range The src.main.java.com.plotter.Range (on the x-axis) over which to plot
+     *
+     * @param range  The src.main.java.com.plotter.Range (on the x-axis) over which to plot
      * @param cursor The src.main.java.com.plotter.Cursor denoting a point on the x-axis
      */
     public Plot(final Range range, final Cursor cursor) {
@@ -38,6 +39,7 @@ public final class Plot {
 
     /**
      * Adds a function in the plot. It attaches an src.main.java.com.plotter.FunctionListener for each of them.
+     *
      * @param func a src.main.java.com.plotter.Function.
      */
     public void addFunction(final Function func) {
@@ -53,6 +55,7 @@ public final class Plot {
 
     /**
      * Remove a src.main.java.com.plotter.Function from the function list.
+     *
      * @param func a src.main.java.com.plotter.Function.
      */
     public void removeFunction(final Function func) {
@@ -61,6 +64,7 @@ public final class Plot {
 
     /**
      * Get function at an index.
+     *
      * @param index the index.
      * @return the function at a given index.
      */
@@ -70,6 +74,7 @@ public final class Plot {
 
     /**
      * Get the src.main.java.com.plotter.Function of this src.main.java.com.plotter.Plot.
+     *
      * @return this src.main.java.com.plotter.Plot's src.main.java.com.plotter.Function
      */
     public final ArrayList<Function> getFunctionList() {
@@ -78,14 +83,16 @@ public final class Plot {
 
     /**
      * Get the src.main.java.com.plotter.Range of this src.main.java.com.plotter.Plot.
+     *
      * @return this src.main.java.com.plotter.Plot's src.main.java.com.plotter.Range
      */
     public final Range getRange() {
         return range;
     }
-    
+
     /**
      * Get the src.main.java.com.plotter.Cursor of this src.main.java.com.plotter.Plot.
+     *
      * @return this src.main.java.com.plotter.Plot's src.main.java.com.plotter.Cursor
      */
     public final Cursor getCursor() {
@@ -94,6 +101,7 @@ public final class Plot {
 
     /**
      * Adds a listener
+     *
      * @param li A src.main.java.com.plotter.PlotListener.
      */
     public final void addListener(final PlotListener li) {
@@ -102,6 +110,7 @@ public final class Plot {
 
     /**
      * Remove a listener
+     *
      * @param li a src.main.java.com.plotter.PlotListener.
      */
     public final void removeListener(final PlotListener li) {

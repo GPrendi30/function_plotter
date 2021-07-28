@@ -1,4 +1,4 @@
-package src.main.java.com.plotter;
+package com.plotter;
 
 public class FunctionException extends Exception {
 
@@ -11,6 +11,7 @@ public class FunctionException extends Exception {
 
     /**
      * Creates a src.main.java.com.plotter.FunctionException with a message.
+     *
      * @param message a message thrown together with an Exception.
      */
     public FunctionException(final String message) {
@@ -19,8 +20,9 @@ public class FunctionException extends Exception {
 
     /**
      * Creates a src.main.java.com.plotter.FunctionException with a message and a cause.
+     *
      * @param message a String message thrown with the exception.
-     * @param cause the cause of the Exception.
+     * @param cause   the cause of the Exception.
      */
     public FunctionException(final String message, final Throwable cause) {
         super(message, cause);

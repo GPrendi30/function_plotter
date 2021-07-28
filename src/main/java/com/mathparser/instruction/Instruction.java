@@ -1,22 +1,24 @@
-package src.main.java.com.mathparser.instruction;
+package com.mathparser.instruction;
 
-import src.main.java.com.mathparser.lexer.program.Storage;
+import com.mathparser.program.Storage;
 
 /**
- * An IJVM-like src.main.java.com.mathparser.instruction.Instruction.
+ * An IJVM-like Instruction.
  */
 public interface Instruction {
-    
+
     /**
      * Execute this src.main.java.com.mathparser.instruction.Instruction.
+     *
      * @param storage The "memory" to use during the execution
      */
-    public abstract void execute(final Storage storage);
-    
+    void execute(final Storage storage);
+
     /**
-     * Get a String with the disassembled src.main.java.com.mathparser.instruction.Instruction.
-     * @return A String-representation of this src.main.java.com.mathparser.instruction.Instruction.
+     * Get a String with the disassembled Instruction.
+     *
+     * @return A String-representation of this Instruction.
      */
-    public abstract String toString();
-    
+    String toString();
+
 }

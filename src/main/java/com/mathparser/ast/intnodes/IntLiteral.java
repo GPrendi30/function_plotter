@@ -1,17 +1,20 @@
-package src.main.java.com.mathparser.ast.intnodes;
+package com.mathparser.ast.intnodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.intInstruction.BIPUSH;
+import com.mathparser.ast.NodeLiteral;
+import com.mathparser.ast.Type;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.intInstruction.BIPUSH;
 
 /**
- * A Literal is an AST node that 
+ * A Literal is an AST node that
  * corresponds to a literal integer intValue
  * (a number in the source code).
  */
 public class IntLiteral extends NodeLiteral {
-    
+
     /**
      * Creates a new variable with a given doubleVarName.
+     *
      * @param intValue an Integer
      */
     public IntLiteral(final int intValue) {
@@ -22,9 +25,9 @@ public class IntLiteral extends NodeLiteral {
     public Type getType() {
         return Type.INT;
     }
-    
+
     @Override
     public Instruction instruction() {
         return new BIPUSH(value.intValue());
-    }   
+    }
 }

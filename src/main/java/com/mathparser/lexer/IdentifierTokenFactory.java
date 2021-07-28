@@ -1,4 +1,5 @@
-package src.main.java.com.mathparser.lexer;//---
+package com.mathparser.lexer;//---
+
 /**
  * A factory for tokens of type identifier.
  */
@@ -13,11 +14,12 @@ public class IdentifierTokenFactory extends RegExTokenFactory {
 
     /**
      * Produce a token.
+     *
      * @return the currently found token
      */
     public Token getToken() {
         return new Token(TokenType.IDENTIFIER, getTokenText(), getTokenStartPosition());
     }
-    
+
 }
 //---

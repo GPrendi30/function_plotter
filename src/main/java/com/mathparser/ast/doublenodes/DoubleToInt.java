@@ -1,13 +1,15 @@
-package src.main.java.com.mathparser.ast.doublenodes;
+package com.mathparser.ast.doublenodes;
 
-import src.main.java.com.mathparser.ast.intnodes.IntUnaryNode;
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.doubleInstruction.D2I;
+import com.mathparser.ast.Node;
+import com.mathparser.ast.intnodes.IntUnaryNode;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.instruction.doubleInstruction.D2I;
 
 public class DoubleToInt extends IntUnaryNode {
 
     /**
      * Constructs a src.main.java.com.mathparser.ast.doublenodes.DoubleToInt object.
+     *
      * @param child a src.main.java.com.mathparser.ast.Node
      */
     public DoubleToInt(final Node child) {

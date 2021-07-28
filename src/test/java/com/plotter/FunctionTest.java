@@ -1,12 +1,9 @@
-package src.test.java.com.plotter;
+package com.plotter;
 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import src.main.java.com.plotter.Function;
-import src.main.java.com.plotter.FunctionException;
-import src.main.java.com.plotter.FunctionListener;
 
 
 public class FunctionTest {

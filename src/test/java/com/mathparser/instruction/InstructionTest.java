@@ -1,34 +1,30 @@
-package src.test.java.com.mathparser.instruction;
+package com.mathparser.instruction;
 
-import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
+import com.mathparser.instruction.doubleInstruction.BDPUSH;
+import com.mathparser.instruction.doubleInstruction.D2I;
+import com.mathparser.instruction.doubleInstruction.DADD;
+import com.mathparser.instruction.doubleInstruction.DDIV;
+import com.mathparser.instruction.doubleInstruction.DLOAD;
+import com.mathparser.instruction.doubleInstruction.DMUL;
+import com.mathparser.instruction.doubleInstruction.DNEG;
+import com.mathparser.instruction.doubleInstruction.DSUB;
+import com.mathparser.instruction.intInstruction.BIPUSH;
+import com.mathparser.instruction.intInstruction.I2D;
+import com.mathparser.instruction.intInstruction.IADD;
+import com.mathparser.instruction.intInstruction.IDIV;
+import com.mathparser.instruction.intInstruction.ILOAD;
+import com.mathparser.instruction.intInstruction.IMUL;
+import com.mathparser.instruction.intInstruction.INEG;
+import com.mathparser.instruction.intInstruction.ISUB;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
+import com.mathparser.program.VariableTable;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.instruction.doubleInstruction.BDPUSH;
-import src.main.java.com.mathparser.instruction.doubleInstruction.D2I;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DADD;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DDIV;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DMUL;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DNEG;
-import src.main.java.com.mathparser.instruction.doubleInstruction.DSUB;
-import src.main.java.com.mathparser.instruction.intInstruction.BIPUSH;
-import src.main.java.com.mathparser.instruction.intInstruction.I2D;
-import src.main.java.com.mathparser.instruction.intInstruction.IADD;
-import src.main.java.com.mathparser.instruction.intInstruction.IDIV;
-import src.main.java.com.mathparser.instruction.intInstruction.ILOAD;
-import src.main.java.com.mathparser.instruction.intInstruction.IMUL;
-import src.main.java.com.mathparser.instruction.intInstruction.INEG;
-import src.main.java.com.mathparser.instruction.intInstruction.ISUB;
-import src.main.java.com.mathparser.lexer.program.OperandStack;
-import src.main.java.com.mathparser.lexer.program.Storage;
-import src.main.java.com.mathparser.lexer.program.VariableTable;
-
 
 /**
- * Tests toString() and execute() of src.main.java.com.mathparser.instruction.Instruction subclasses.
+ * Tests toString() and execute() of Instruction subclasses.
  */
 public class InstructionTest {
     
@@ -37,7 +33,7 @@ public class InstructionTest {
     @Test
     public void testToStringBIPUSH() {
         Instruction i = new BIPUSH(1);
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.BIPUSH 1", i.toString());
+        assertEquals("BIPUSH 1", i.toString());
     }
     
     @Test
@@ -54,7 +50,7 @@ public class InstructionTest {
     @Test
     public void testToStringINEG() {
         Instruction i = new INEG();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.INEG", i.toString());
+        assertEquals("INEG", i.toString());
     }
     
     @Test
@@ -72,7 +68,7 @@ public class InstructionTest {
     @Test
     public void testToStringIADD() {
         Instruction i = new IADD();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.IADD", i.toString());
+        assertEquals("IADD", i.toString());
     }
     
     @Test
@@ -91,7 +87,7 @@ public class InstructionTest {
     @Test
     public void testToStringISUB() {
         Instruction i = new ISUB();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.ISUB", i.toString());
+        assertEquals("ISUB", i.toString());
     }
     
     @Test
@@ -109,7 +105,7 @@ public class InstructionTest {
     @Test
     public void testToStringIMUL() {
         Instruction i = new IMUL();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.IMUL", i.toString());
+        assertEquals("IMUL", i.toString());
     }
     
     @Test
@@ -127,7 +123,7 @@ public class InstructionTest {
     @Test
     public void testToStringIDIV() {
         Instruction i = new IDIV();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.IDIV", i.toString());
+        assertEquals("IDIV", i.toString());
     }
     
     @Test
@@ -145,7 +141,7 @@ public class InstructionTest {
     @Test
     public void testToStringILOAD() {
         Instruction i = new ILOAD("x");
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.ILOAD x", i.toString());
+        assertEquals("ILOAD x", i.toString());
     }
     
     @Test
@@ -154,7 +150,7 @@ public class InstructionTest {
         VariableTable vt = new VariableTable();
         Storage s = new Storage(os, vt);
         
-        // init src.main.java.com.mathparser.instruction.Instruction: src.main.java.com.mathparser.instruction.intInstruction.ILOAD x
+        // init Instruction: ILOAD x
         Instruction i = new ILOAD("x");
         vt.iset("x", 10); // set x to 10
 
@@ -166,7 +162,7 @@ public class InstructionTest {
     @Test
     public void testToStringBDPUSH() {
         Instruction i = new BDPUSH(1);
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.BDPUSH 1.0", i.toString());
+        assertEquals("BDPUSH 1.0", i.toString());
     }
     
     @Test
@@ -183,7 +179,7 @@ public class InstructionTest {
     @Test
     public void testToStringDNEG() {
         Instruction i = new DNEG();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DNEG", i.toString());
+        assertEquals("DNEG", i.toString());
     }
     
     @Test
@@ -201,7 +197,7 @@ public class InstructionTest {
     @Test
     public void testToStringDADD() {
         Instruction i = new DADD();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DADD", i.toString());
+        assertEquals("DADD", i.toString());
     }
     
     @Test
@@ -220,7 +216,7 @@ public class InstructionTest {
     @Test
     public void testToStringDSUB() {
         Instruction i = new DSUB();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DSUB", i.toString());
+        assertEquals("DSUB", i.toString());
     }
     
     @Test
@@ -238,7 +234,7 @@ public class InstructionTest {
     @Test
     public void testToStringDMUL() {
         Instruction i = new DMUL();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DMUL", i.toString());
+        assertEquals("DMUL", i.toString());
     }
     
     @Test
@@ -256,7 +252,7 @@ public class InstructionTest {
     @Test
     public void testToStringDDIV() {
         Instruction i = new DDIV();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DDIV", i.toString());
+        assertEquals("DDIV", i.toString());
     }
     
     @Test
@@ -274,7 +270,7 @@ public class InstructionTest {
     @Test
     public void testToStringDLOAD() {
         Instruction i = new DLOAD("x");
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD x", i.toString());
+        assertEquals("DLOAD x", i.toString());
     }
     
     @Test
@@ -283,7 +279,7 @@ public class InstructionTest {
         VariableTable vt = new VariableTable();
         Storage s = new Storage(os, vt);
         
-        // init src.main.java.com.mathparser.instruction.Instruction: src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD x
+        // init Instruction: DLOAD x
         Instruction i = new DLOAD("x");
         vt.dset("x", 10.0); // set x to 10
 
@@ -295,7 +291,7 @@ public class InstructionTest {
     @Test
     public void testToStringD2I() {
         Instruction i = new D2I();
-        assertEquals("src.main.java.com.mathparser.instruction.doubleInstruction.D2I", i.toString());
+        assertEquals("D2I", i.toString());
     }
 
     @Test
@@ -313,7 +309,7 @@ public class InstructionTest {
     @Test
     public void testToStringI2D() {
         Instruction i = new I2D();
-        assertEquals("src.main.java.com.mathparser.instruction.intInstruction.I2D", i.toString());
+        assertEquals("I2D", i.toString());
     }
 
     @Test

@@ -1,4 +1,4 @@
-package src.main.java.com.mathparser.lexer;
+package com.mathparser.lexer;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,12 +9,13 @@ import java.util.regex.Pattern;
  * to specify the kinds of tokens it produces.
  */
 public class RegExTokenFactory extends TokenFactory {
-    
+
     private final Matcher matcher;
-    
-    
+
+
     /**
      * Create a factory that produces tokens that match the given regular expression.
+     *
      * @param regEx The regular expression to use for identifying tokens
      */
     public RegExTokenFactory(final String regEx) {
@@ -41,6 +42,7 @@ public class RegExTokenFactory extends TokenFactory {
 
     /**
      * Get the position at which we last tried to find a token.
+     *
      * @return The start position of the last call to find(...)
      */
     protected int getTokenStartPosition() {
@@ -49,6 +51,7 @@ public class RegExTokenFactory extends TokenFactory {
 
     /**
      * The text of the token.
+     *
      * @return The text of the token we found.
      */
     protected String getTokenText() {

@@ -1,18 +1,24 @@
-package src.main.java.com.mathparser.instruction.doubleInstruction;
+package com.mathparser.instruction.doubleInstruction;
+
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.OperandStack;
+import com.mathparser.program.Storage;
+import com.mathparser.program.VariableTable;
 
 public class DLOAD implements Instruction {
 
     private final String var;
 
     /**
-     * Creates a new src.main.java.com.mathparser.instruction.intInstruction.ILOAD src.main.java.com.mathparser.instruction.Instruction.
+     * Creates a new ILOAD Instruction.
+     *
      * @param var a String
      */
     public DLOAD(final String var) {
         super();
         this.var = var;
     }
-    
+
     @Override
     public void execute(final Storage storage) {
         final OperandStack stack = storage.getOperandStack();
@@ -23,10 +29,11 @@ public class DLOAD implements Instruction {
 
     /**
      * Returns a String.
+     *
      * @return a String representation of the src.main.java.com.mathparser.ast.Node
      */
     public String toString() {
-        return "src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD " + var;
+        return "DLOAD " + var;
     }
-    
+
 }

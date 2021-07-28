@@ -1,17 +1,14 @@
 package com.gui;
 
-import java.awt.Color;
-import java.awt.GridLayout;
+import com.plotter.Function;
+import com.plotter.FunctionException;
+import com.plotter.Plot;
+import com.plotter.PlotListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import src.main.java.com.plotter.Function;
-import src.main.java.com.plotter.FunctionException;
-import src.main.java.com.plotter.Plot;
+import javax.swing.*;
 
 public class SidePanel extends JPanel {
 
@@ -23,6 +20,7 @@ public class SidePanel extends JPanel {
 
     /**
      * Creates a src.main.java.com.gui.SidePanel.
+     *
      * @param plot the model.
      */
     public SidePanel(final Plot plot) {
@@ -79,6 +77,7 @@ public class SidePanel extends JPanel {
 
     /**
      * Remove a listener.
+     *
      * @param li a src.main.java.com.gui.SidePanelListener.
      */
     public void removeListener(final SidePanelListener li) {
@@ -87,6 +86,7 @@ public class SidePanel extends JPanel {
 
     /**
      * Adds a Listener.
+     *
      * @param li a src.main.java.com.gui.SidePanelListener.
      */
     public void addListener(final SidePanelListener li) {
@@ -95,6 +95,7 @@ public class SidePanel extends JPanel {
 
     /**
      * Removes functionPanel.
+     *
      * @param functionPanel the functionPanel to be removed.
      */
     public void removeFunction(final FunctionPanel functionPanel) {

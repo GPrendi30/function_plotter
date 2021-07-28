@@ -1,7 +1,10 @@
-package src.main.java.com.mathparser.ast.intnodes;
+package com.mathparser.ast.intnodes;
 
-import src.main.java.com.mathparser.instruction.Instruction;
-import src.main.java.com.mathparser.lexer.program.Program;
+
+import com.mathparser.ast.Node;
+import com.mathparser.ast.Type;
+import com.mathparser.instruction.Instruction;
+import com.mathparser.program.Program;
 
 public class IntBinaryNode extends Node {
 
@@ -10,7 +13,8 @@ public class IntBinaryNode extends Node {
 
     /**
      * Constructor.
-     * @param leftChild a src.main.java.com.mathparser.ast.Node
+     *
+     * @param leftChild  a src.main.java.com.mathparser.ast.Node
      * @param rightChild a src.main.java.com.mathparser.ast.Node
      */
     public IntBinaryNode(final Node leftChild, final Node rightChild) {
@@ -28,7 +32,7 @@ public class IntBinaryNode extends Node {
     public boolean isConstant() {
         return leftChild.isConstant() && rightChild.isConstant();
     }
-    
+
     @Override
     public void compile(final Program p) {
         leftChild.compile(p);
@@ -38,6 +42,7 @@ public class IntBinaryNode extends Node {
 
     /**
      * Returns the String representation of the node.
+     *
      * @param op -> String
      * @return the String representation of the node
      */
@@ -47,6 +52,7 @@ public class IntBinaryNode extends Node {
 
     /**
      * Returns the src.main.java.com.mathparser.instruction.Instruction of the node.
+     *
      * @return the jvm src.main.java.com.mathparser.instruction.Instruction
      */
     public Instruction instruction() {
