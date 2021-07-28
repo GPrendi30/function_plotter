@@ -62,7 +62,7 @@ public final class ArithParser implements Parser {
      * EXPRESSION ::= [ "+" | "-" ] TERM { ( "+" | "-" ) TERM }
      * </code>
      *
-     * @return a src.main.java.com.mathparser.ast.Node representing the expression
+     * @return a Node representing the expression
      */
     private Node parseExpression() throws ArithSyntaxException {
         // parses an expression to an AST
@@ -114,7 +114,7 @@ public final class ArithParser implements Parser {
      * TERM ::= FACTOR { ( "*" | "/" ) FACTOR }
      * </code>
      *
-     * @return a src.main.java.com.mathparser.ast.Node representing the term
+     * @return a Node representing the term
      */
     private Node parseTerm() throws ArithSyntaxException {
         boolean isMul = false;
@@ -152,7 +152,7 @@ public final class ArithParser implements Parser {
      * "(" EXPRESSION ")"
      * </code>
      *
-     * @return a src.main.java.com.mathparser.ast.Node representing the factor
+     * @return a Node representing the factor
      */
     private Node parseFactor() throws ArithSyntaxException {
 
@@ -210,10 +210,10 @@ public final class ArithParser implements Parser {
      *
      * <p>EBNF:
      * <code>
-     * FUNCTION  ::= src.main.java.com.mathparser.functions.SIN|src.main.java.com.mathparser.functions.COS|src.main.java.com.mathparser.functions.SUM (EXPRESSION {, EXPRESSION})
+     * FUNCTION  ::= SIN|COS|SUM (EXPRESSION {, EXPRESSION})
      * </code>
      *
-     * @return a src.main.java.com.mathparser.ast.Node representing the function
+     * @return a Node representing the function
      */
     private Node parseFunction() throws ArithSyntaxException {
         final FunctionNode f = parseFunctionKeyword();

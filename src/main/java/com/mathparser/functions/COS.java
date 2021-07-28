@@ -6,10 +6,10 @@ import com.mathparser.program.Storage;
 public class COS extends FunctionNode {
 
     /**
-     * Creates a new src.main.java.com.mathparser.functions.COS function. src.main.java.com.mathparser.functions.COS.
+     * Creates a COS function.
      */
     public COS() {
-        super("src.main.java.com.mathparser.functions.COS", 1);
+        super("COS", 1);
     }
 
     protected FunctionInstruction functionInstruction() {

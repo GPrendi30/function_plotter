@@ -6,10 +6,10 @@ import com.mathparser.instruction.intInstruction.IDIV;
 
 public class IntDivision extends IntBinaryNode {
     /**
-     * Creates a new src.main.java.com.mathparser.ast.intnodes.IntDivision src.main.java.com.mathparser.ast.Node.
+     * Creates a new IntDivision Node.
      *
-     * @param leftChild  a src.main.java.com.mathparser.ast.Node
-     * @param rightChild a src.main.java.com.mathparser.ast.Node
+     * @param leftChild  a Node
+     * @param rightChild a Node
      */
     public IntDivision(final Node leftChild, final Node rightChild) {
         super(leftChild, rightChild);

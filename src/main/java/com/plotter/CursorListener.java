@@ -6,18 +6,18 @@ package com.plotter;
  * whenever the "model" changes, so that the "GUI" (or text UI, or ...)
  * can react to those changes (e.g., by repainting itself).
  *
- * <p>To enable this, we have this src.main.java.com.plotter.CursorListener interface.
- * The "model" (i.e., the src.main.java.com.plotter.Cursor) will call cursorChanged()
+ * <p>To enable this, we have this CursorListener interface.
+ * The "model" (i.e., the Cursor) will call cursorChanged()
  * on all registered listeners,
- * without knowing the specific subtype of src.main.java.com.plotter.CursorListener
- * (e.g., the "model" does not know about the src.main.java.com.gui.PlotCanvas class).
+ * without knowing the specific subtype of CursorListener
+ * (e.g., the "model" does not know about the PlotCanvas class).
  */
 public interface CursorListener {
 
     /**
-     * Notify this src.main.java.com.plotter.CursorListener that the given src.main.java.com.plotter.Cursor has changed.
+     * Notify this CursorListener that the given Cursor has changed.
      *
-     * @param cursor The src.main.java.com.plotter.Cursor that changed.
+     * @param cursor The Cursor that changed.
      */
     void cursorChanged(Cursor cursor);
 

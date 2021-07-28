@@ -20,9 +20,9 @@ public class Program {
     }
 
     /**
-     * Append the given src.main.java.com.mathparser.instruction.Instruction to this program.
+     * Append the given Instruction to this program.
      *
-     * @param instruction The src.main.java.com.mathparser.instruction.Instruction to append
+     * @param instruction The Instruction to append
      */
     public void append(final Instruction instruction) {
         code.add(instruction);
@@ -38,10 +38,10 @@ public class Program {
     }
 
     /**
-     * Get the src.main.java.com.mathparser.instruction.Instruction at the given index in the program.
+     * Get the Instruction at the given index in the program.
      *
      * @param index the index
-     * @return the src.main.java.com.mathparser.instruction.Instruction at the given index
+     * @return the Instruction at the given index
      */
     public Instruction get(final int index) {
         return code.get(index);
@@ -66,7 +66,7 @@ public class Program {
      * after executing all Instructions.
      *
      * @param variables The variables with their values
-     *                  (accessed by src.main.java.com.mathparser.instruction.intInstruction.ILOAD Instructions)
+     *                  (accessed by ILOAD Instructions)
      * @return The result of the execution.
      */
     public int iExecute(final VariableTable variables) {
@@ -96,7 +96,7 @@ public class Program {
      * after executing all Instructions.
      *
      * @param variables The variables with their values
-     *                  (accessed by src.main.java.com.mathparser.instruction.intInstruction.ILOAD Instructions)
+     *                  (accessed by ILOAD Instructions)
      * @return The result of the execution.
      */
     public double dExecute(final VariableTable variables) {
@@ -111,7 +111,7 @@ public class Program {
 
     /**
      * Disassemble this program into a String,
-     * with one bytecode src.main.java.com.mathparser.instruction.Instruction per line.
+     * with one bytecode Instruction per line.
      *
      * @return A String-representation of this program.
      */

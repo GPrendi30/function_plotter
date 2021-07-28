@@ -161,9 +161,9 @@
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
-            <property name="allowedAbbreviations" value="src.main.java.com.mathparser.instruction.intInstruction.IADD,src.main.java.com.mathparser.instruction.intInstruction.ISUB,src.main.java.com.mathparser.instruction.intInstruction.IMUL,src.main.java.com.mathparser.instruction.intInstruction.IDIV,src.main.java.com.mathparser.instruction.intInstruction.INEG,src.main.java.com.mathparser.instruction.intInstruction.BIPUSH,src.main.java.com.mathparser.instruction.intInstruction.ILOAD"/>
-            <property name="allowedAbbreviations" value="src.main.java.com.mathparser.instruction.doubleInstruction.DADD,src.main.java.com.mathparser.instruction.doubleInstruction.DSUB,src.main.java.com.mathparser.instruction.doubleInstruction.DMUL,src.main.java.com.mathparser.instruction.doubleInstruction.DDIV,src.main.java.com.mathparser.instruction.doubleInstruction.DNEG,src.main.java.com.mathparser.instruction.doubleInstruction.BDPUSH,src.main.java.com.mathparser.instruction.doubleInstruction.DLOAD"/>
-            <property name="allowedAbbreviations" value="src.main.java.com.mathparser.functions.SUM,src.main.java.com.mathparser.functions.EXP,MIN,src.main.java.com.mathparser.functions.MAX,src.main.java.com.mathparser.functions.SIN,COS,src.main.java.com.mathparser.functions.POW,src.main.java.com.mathparser.functions.AVG,src.main.java.com.mathparser.functions.ABS,MOD,src.main.java.com.mathparser.functions.LOG"/>
+            <property name="allowedAbbreviations" value="IADD,ISUB,IMUL,IDIV,INEG,BIPUSH,ILOAD"/>
+            <property name="allowedAbbreviations" value="DADD,DSUB,DMUL,DDIV,DNEG,BDPUSH,DLOAD"/>
+            <property name="allowedAbbreviations" value="SUM,EXP,MIN,MAX,SIN,COS,POW,AVG,ABS,MOD,LOG"/>
         </module>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>
@@ -175,7 +175,7 @@
         <module name="MethodParamPad"/>
         <module name="OperatorWrap">
             <property name="option" value="NL"/>
-            <property name="tokens" value="BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, src.main.java.com.mathparser.functions.MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR "/>
+            <property name="tokens" value="BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR "/>
         </module>
         <module name="AnnotationLocation">
             <property name="tokens" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF"/>

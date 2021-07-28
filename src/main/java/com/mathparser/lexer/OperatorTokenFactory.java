@@ -1,7 +1,7 @@
 package com.mathparser.lexer;
 
 /**
- * A special kind of src.main.java.com.mathparser.lexer.StringTokenFactory,
+ * A special kind of StringTokenFactory,
  * which produces tokens that represent operators.
  */
 public class OperatorTokenFactory extends StringTokenFactory {
@@ -10,10 +10,10 @@ public class OperatorTokenFactory extends StringTokenFactory {
 
 
     /**
-     * Create an src.main.java.com.mathparser.lexer.OperatorTokenFactory for tokens representing the given operator.
+     * Create an OperatorTokenFactory for tokens representing the given operator.
      *
      * @param operator  the operator
-     * @param tokenType the src.main.java.com.mathparser.lexer.TokenType corresponding to this operator
+     * @param tokenType the TokenType corresponding to this operator
      */
     public OperatorTokenFactory(final String operator, final TokenType tokenType) {
         super(operator);

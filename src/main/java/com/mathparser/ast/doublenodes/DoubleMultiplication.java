@@ -8,10 +8,10 @@ import com.mathparser.instruction.doubleInstruction.DMUL;
 public class DoubleMultiplication extends DoubleBinaryNode {
 
     /**
-     * Creates a new src.main.java.com.mathparser.ast.doublenodes.DoubleMultiplication src.main.java.com.mathparser.ast.Node.
+     * Creates a new DoubleMultiplication Node.
      *
-     * @param leftChild  a src.main.java.com.mathparser.ast.Node
-     * @param rightChild a src.main.java.com.mathparser.ast.Node
+     * @param leftChild  a Node
+     * @param rightChild a Node
      */
     public DoubleMultiplication(final Node leftChild, final Node rightChild) {
         super(leftChild, rightChild);

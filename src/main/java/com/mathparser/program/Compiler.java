@@ -3,7 +3,7 @@ package com.mathparser.program;
 import com.mathparser.ast.Node;
 
 /**
- * A src.main.java.com.mathparser.program.Compiler converts an AST into a compiled src.main.java.com.mathparser.program.Program.
+ * A Compiler converts an AST into a compiled Program.
  */
 public class Compiler {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 /**
- * A src.main.java.com.plotter.Range represents a range of values (from a given minimum to a given maximum).
+ * A Range represents a range of values (from a given minimum to a given maximum).
  * It is mutable and observable
  * (observable means that one can register a listener to get notified of changes).
  */
@@ -26,7 +26,7 @@ public final class Range {
     }
 
     /**
-     * Return the current minimum value of this src.main.java.com.plotter.Range.
+     * Return the current minimum value of this Range.
      *
      * @return the current minimum value
      */
@@ -35,7 +35,7 @@ public final class Range {
     }
 
     /**
-     * Set the minimum value of this src.main.java.com.plotter.Range.
+     * Set the minimum value of this Range.
      *
      * @param min The new minimum value.
      */
@@ -45,7 +45,7 @@ public final class Range {
     }
 
     /**
-     * Return the current maximum value of this src.main.java.com.plotter.Range.
+     * Return the current maximum value of this Range.
      *
      * @return the current maximum value
      */
@@ -55,7 +55,7 @@ public final class Range {
 
 
     /**
-     * Set the maximum value of this src.main.java.com.plotter.Range.
+     * Set the maximum value of this Range.
      *
      * @param max The new maximum value.
      */
@@ -66,18 +66,18 @@ public final class Range {
 
 
     /**
-     * Get the extent of this src.main.java.com.plotter.Range (the maximum minus the minimum).
+     * Get the extent of this  Range (the maximum minus the minimum).
      *
-     * @return The extent of this src.main.java.com.plotter.Range.
+     * @return The extent of this Range.
      */
     public final double getExtent() {
         return max - min;
     }
 
     /**
-     * Adds a new src.main.java.com.plotter.Range Listener.
+     * Adds a new Range Listener.
      *
-     * @param li a src.main.java.com.plotter.RangeListener
+     * @param li a RangeListener
      */
     public void addRangeListener(final RangeListener li) {
         listeners.add(li);
@@ -85,7 +85,7 @@ public final class Range {
     }
 
     /**
-     * Removes a given src.main.java.com.plotter.Range Listener.
+     * Removes a given Range Listener.
      *
      * @param li a Rangelistener
      */

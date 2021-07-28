@@ -200,7 +200,7 @@
         <version>3.0.0</version>
         <configuration>
           <configLocation>${checkstyle.config.file}</configLocation>
-          <excludes>**/*Test.java,**/GamePane.java,**/GameFrame.java,**/Sound.java,**/Painter.java</excludes>
+          <excludes>**/*Test.java</excludes>
         </configuration>
         <reportSets>
           <reportSet>

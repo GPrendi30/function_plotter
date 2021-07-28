@@ -11,9 +11,9 @@ public class FunctionPanel extends JComponent {
 
     private final Function function;
     private final SidePanel parent;
-    private static final ImageIcon enable = new ImageIcon("src/main/resources/enable32.png");
-    private static final ImageIcon disable = new ImageIcon("src/main/resources/disable32.png");
-    private static final ImageIcon remove = new ImageIcon("src/main/resources/remove32.png");
+    private static final ImageIcon ENABLE_ICON = new ImageIcon("src/main/resources/enable32.png");
+    private static final ImageIcon DISABLE_ICON = new ImageIcon("src/main/resources/disable32.png");
+    private static final ImageIcon REMOVE_ICON = new ImageIcon("src/main/resources/remove32.png");
 
 
     /**
@@ -42,16 +42,16 @@ public class FunctionPanel extends JComponent {
     }
 
     private void addEnableButton() {
-        final CustomButton enabledButton = new CustomButton(enable, "Enables drawing a function");
+        final CustomButton enabledButton = new CustomButton(ENABLE_ICON, "Enables drawing a function");
         enabledButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent actionEvent) {
                 if (function.isDrawable()) {
                     disableFunction();
-                    enabledButton.setIcon(disable);
+                    enabledButton.setIcon(DISABLE_ICON);
                 } else {
                     enableFunction();
-                    enabledButton.setIcon(enable);
+                    enabledButton.setIcon(ENABLE_ICON);
                 }
             }
         });
@@ -60,7 +60,7 @@ public class FunctionPanel extends JComponent {
     }
 
     private void addRemoveIButton() {
-        final CustomButton removeButton = new CustomButton(remove, "Removes a function");
+        final CustomButton removeButton = new CustomButton(REMOVE_ICON, "Removes a function");
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent actionEvent) {

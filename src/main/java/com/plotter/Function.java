@@ -26,7 +26,7 @@ public final class Function {
      * Create a src.main.java.com.plotter.Function based on the given expression.
      *
      * @param expressionText The expression (a function of x).
-     * @throws FunctionException throws src.main.java.com.plotter.FunctionException if the expression can't be parsed.
+     * @throws FunctionException throws FunctionException if the expression can't be parsed.
      */
     public Function(final String expressionText) throws FunctionException {
         listeners = new ArrayList<>();
@@ -39,7 +39,7 @@ public final class Function {
      * Change the expression underlying this src.main.java.com.plotter.Function.
      *
      * @param expressionText The new expression (a function of x).
-     * @throws FunctionException throws src.main.java.com.plotter.FunctionException if the expression can't be parsed.
+     * @throws FunctionException throws FunctionException if the expression can't be parsed.
      */
     public final void setExpression(final String expressionText) throws FunctionException {
         this.expressionText = expressionText;
@@ -130,7 +130,7 @@ public final class Function {
     /**
      * Adds a new function listener.
      *
-     * @param li a src.main.java.com.plotter.Function Listener
+     * @param li a Function Listener
      */
     public void addFunctionListener(final FunctionListener li) {
         listeners.add(li);
@@ -139,7 +139,7 @@ public final class Function {
     /**
      * Removes a function listener.
      *
-     * @param li a src.main.java.com.plotter.Function Listener
+     * @param li a Function Listener
      */
     public void removeFunctionListener(final FunctionListener li) {
         listeners.remove(li);
