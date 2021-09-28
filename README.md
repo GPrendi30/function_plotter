@@ -1,24 +1,13 @@
-## src.main.java.com.plotter.Function Plotter Plus
+# FUNCTION PLOTTER
 
-[*Paola Guma*](https://github.com/paolaguma)
+### Features
+* plot multiple functions.
+* enable/disable functions.
+* set range for each function.
+* set different color for each function.
+* zoom in/zoom out.
+* save the functions as a png/jpeg file.
 
-### Idea
-Build an advanced function plotter, and if possible graph calculator. Based on the labs 8 to 10, updated with our own ideas and solutions.
-
-
-### Milestones
-* Implement the labs
-* Have a working function plotter with GUI.
-* add support for types such as double, float.
-* add functions such as sin, cos.
-* add new features.
-
-
-#### _MVC_ (Model View Controller)
-We will try to divide the logic of the program from the graphical interface as described in the MVC.  
-
-##### _Observer pattern_  
-We used the observer pattern for the GUI.
 
 ### Maven build tool
 We use _maven_ for test coverage.
